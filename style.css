@@ -1,0 +1,445 @@
+/* style.css - Design du Portfolio Aziz LO - Version Finale */
+
+:root {
+    --primary-color: #005b96; /* Bleu Roi Ecobank/Tech */
+    --secondary-color: #6497b1;
+    --accent-color: #ffca28; /* Touche de jaune pour l'appel à l'action */
+    --dark-bg: #1a1a1d;
+    --light-bg: #f4f7f6;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+/* --- NAVIGATION --- */
+
+/* --- ANIMATION LOGO GLOBE--- */
+
+@keyframes spin-earth {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rotating-globe {
+    display: inline-block;
+    font-size: 3rem; /* Beaucoup plus gros (avant c'était 1.8rem) */
+    color: var(--primary-color);
+    
+    /* Animation lente et fluide */
+    animation: spin-earth 20s linear infinite; 
+    
+    /* Effet "Tech / Hologramme" (Lueur bleue) */
+    text-shadow: 0 0 15px rgba(0, 91, 150, 0.6);
+}
+
+/* Au survol, le globe devient jaune et tourne un peu plus vite */
+.logo:hover .rotating-globe {
+    color: var(--accent-color);
+    text-shadow: 0 0 15px rgba(255, 202, 40, 0.6); /* Lueur jaune */
+    animation-duration: 6s;
+    cursor: pointer;
+}
+
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Style pour la page active dans le menu */
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.cta-btn {
+    background-color: var(--primary-color);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- HERO SECTION (Accueil avec Animation) --- */
+.hero {
+    height: 90vh;
+    background-color: #1a1a1d; /* Fond par défaut si l'animation ne charge pas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* --- SECTIONS GÉNÉRALES --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto;
+}
+
+/* Amélioration visuelle "Qui suis-je" */
+#about p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+.value-box {
+    text-align: center;
+    max-width: 200px;
+}
+
+.value-box h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* --- FRISE CHRONOLOGIQUE (TIMELINE) --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+/* --- ACCORDÉON POUR LES DÉTAILS --- */
+.timeline-content {
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background-color: #f9fcff;
+}
+
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    opacity: 0;
+}
+
+.timeline-content.active .timeline-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+    border-top: 1px dashed #ddd;
+    padding-top: 10px;
+}
+
+.toggle-icon {
+    float: right;
+    transition: transform 0.3s ease;
+    color: var(--secondary-color);
+}
+
+.timeline-content.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.timeline-details ul {
+    list-style-type: none;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.timeline-details li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.timeline-details li::before {
+    content: '▹';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.company-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+    margin-top: 3px;
+    border-bottom: 1px dotted #ccc;
+    transition: color 0.3s;
+}
+
+.company-link:hover {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.company-link i {
+    font-size: 0.8rem;
+    margin-right: 3px;
+}
+
+/* --- CARTES COMPÉTENCES --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border-left: 5px solid var(--primary-color);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.skill-body h4 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+/* Boutons "Voir la preuve" (Liens circulaires) */
+.circular-link {
+    display: inline-block;
+    background-color: #f0f4f8;
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+}
+
+.circular-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- RÉALISATIONS (ANECDOTES) --- */
+.project-block {
+    background: var(--white);
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 20px;
+}
+
+.project-body {
+    padding: 30px;
+}
+
+/* Grille pour les Réalisations (Mise en page des 7 notions) */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.proj-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Pied de page des projets (Tags) */
+.project-footer {
+    background: #fafafa;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.tag-link {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-right: 10px;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+.tag-link:hover {
+    background: var(--accent-color);
+    color: #333;
+}
+
+/* KPIs Box */
+.kpi-box {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    background: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Responsive Timeline Fix */
+@media screen and (max-width: 768px) {
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item.right { left: 0%; }
+    .project-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2rem; }
+}

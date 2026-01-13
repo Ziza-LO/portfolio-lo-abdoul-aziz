@@ -1,4 +1,4 @@
-/* style.css - Design Portfolio Aziz LO - Version Finale */
+/* style.css - Design Portfolio Aziz LO - Version Finale V2 */
 
 :root {
     --primary-color: #005b96; /* Bleu Roi Ecobank/Tech */
@@ -40,7 +40,7 @@ body {
     cursor: pointer;
 }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION & MENU DÉROULANT --- */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -73,6 +73,8 @@ nav {
     display: flex;
     gap: 20px;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
@@ -80,6 +82,7 @@ nav {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s;
+    padding: 10px;
 }
 
 .nav-links a:hover {
@@ -92,10 +95,53 @@ nav {
     border-bottom: 2px solid var(--accent-color);
 }
 
+/* Style Dropdown (Menu Déroulant) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f9f9f9;
+    color: var(--primary-color);
+    padding-left: 20px;
+    transition: padding 0.2s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.fa-caret-down {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
 .cta-btn {
     background-color: var(--primary-color);
     color: var(--white) !important;
-    padding: 8px 20px;
+    padding: 8px 20px !important;
     border-radius: 20px;
     transition: transform 0.3s;
     text-decoration: none;
@@ -152,6 +198,7 @@ h2 {
     margin-bottom: 40px;
     text-align: center;
     position: relative;
+    padding-top: 20px; /* Espace pour les ancres */
 }
 
 h2::after {
@@ -210,7 +257,6 @@ h2::after {
 .timeline-item.left { left: 0; }
 .timeline-item.right { left: 50%; }
 
-/* Flèche Timeline */
 .timeline-item::before {
     content: " ";
     height: 0;
@@ -230,7 +276,6 @@ h2::after {
     border-color: transparent white transparent transparent;
 }
 
-/* Point sur la ligne */
 .timeline-item::after {
     content: '';
     position: absolute;
@@ -248,7 +293,6 @@ h2::after {
     left: -10px;
 }
 
-/* Contenu Carte Timeline */
 .timeline-content {
     padding: 20px;
     background-color: var(--white);
@@ -263,7 +307,6 @@ h2::after {
     transform: translateY(-2px);
 }
 
-/* Accordéon Timeline */
 .timeline-details {
     max-height: 0;
     overflow: hidden;
@@ -272,7 +315,7 @@ h2::after {
 }
 
 .timeline-content.active .timeline-details {
-    max-height: 1000px; /* Assez grand pour tout le contenu */
+    max-height: 1000px;
     opacity: 1;
     margin-top: 15px;
     border-top: 1px dashed #ddd;
@@ -312,7 +355,6 @@ h2::after {
     top: 2px;
 }
 
-/* Liens Entreprise */
 .company-link {
     display: inline-block;
     font-size: 0.85rem;
@@ -329,20 +371,39 @@ h2::after {
 }
 
 /* --- COMPETENCES & PROJETS --- */
-.skills-grid, .project-grid {
+.skills-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
-.skills-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.project-grid { grid-template-columns: 1fr 1fr; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
 
 .skill-card, .project-block {
     background: var(--white);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
-.skill-card { padding: 30px; border-left: 5px solid var(--primary-color); }
-.project-block { margin-bottom: 40px; overflow: hidden; }
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.skill-card { 
+    padding: 30px; 
+    border-top: 5px solid var(--primary-color); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-block { margin-bottom: 60px; overflow: hidden; }
 
 .skill-header { display: flex; gap: 15px; align-items: center; color: var(--primary-color); margin-bottom: 20px;}
 .project-header { background: var(--primary-color); color: var(--white); padding: 20px; }
@@ -354,12 +415,56 @@ h2::after {
     margin-bottom: 10px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
+    margin-top: 15px;
 }
 
-/* KPIs & Tags */
-.kpi-box { display: flex; gap: 20px; flex-wrap: wrap; background: #f0f4f8; padding: 15px; border-radius: 8px; }
+/* KPIs & Liens Circulaires */
+.kpi-box { display: flex; gap: 20px; flex-wrap: wrap; background: #f0f4f8; padding: 15px; border-radius: 8px; margin-top:10px; }
 .project-footer { background: #fafafa; padding: 20px; border-top: 1px solid #eee; }
-.tag-link { background: var(--secondary-color); color: white; padding: 4px 12px; border-radius: 15px; text-decoration: none; font-size: 0.85rem; margin-right: 10px; }
+
+/* Bouton lien circulaire (Page Compétences) */
+.btn-circular {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+.btn-circular:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(0,91,150,0.2);
+}
+
+/* Tag lien circulaire (Page Réalisations) */
+.tag-link {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-right: 10px;
+    margin-top: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.tag-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
 
 /* --- MODALE DE CONTACT --- */
 .modal {
@@ -448,7 +553,6 @@ footer {
     .hero-content { width: 90%; padding: 20px; }
     .hero-content h1 { font-size: 1.8rem; }
     
-    /* Timeline Mobile */
     .timeline::after { left: 20px; }
     .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
     .timeline-item.right { left: 0%; }

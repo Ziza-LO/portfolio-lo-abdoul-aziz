@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences & Réalisations - Abdoul Aziz LO</title>
+    <title>Compétences - Abdoul Aziz LO</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -20,245 +20,185 @@
             </a>
             
             <ul class="nav-links">
-                <li><a href="index.html">Accueil & Parcours</a></li>
-                <li><a href="competences.html" class="active">Compétences & Réalisations</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="competences.html" class="active dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#techniques">Techniques</a>
+                        <a href="#humaines">Humaines</a>
+                    </div>
+                </li>
+                <li><a href="realisations.html">Réalisations</a></li>
                 <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="waves-hero">
+    <section class="hero" id="waves-hero" style="height: 50vh;">
         <div class="hero-content">
-            <h1>Mes Compétences & Projets</h1>
+            <h1>Mes Compétences</h1>
             <p>Une expertise technique renforcée par une intelligence situationnelle.</p>
-            <p style="font-size: 1rem; font-style: italic; margin-top:10px;">"De la supervision des flux à la gestion de crise."</p>
         </div>
     </section>
 
     <section class="container">
-        <h2>Mes Compétences Clés</h2>
         
+        <h2 id="techniques">Compétences Techniques</h2>
         <div class="skills-grid">
             
-            <div class="skill-card" id="comp-federateur">
-                <div class="skill-header">
-                    <i class="fas fa-users-cog fa-2x"></i>
-                    <h3>Leadership Fédérateur & Gestion de Crise</h3>
-                </div>
-                
-                <div class="skill-body">
-                    <h4>Ma Définition</h4>
-                    <p>Dans un contexte de production critique, le leadership n'est pas une autorité hiérarchique, mais la capacité à <strong>maintenir la cohésion et la lucidité</strong> d'une équipe sous pression. C'est transformer le stress individuel en énergie collective.</p>
-
-                    <h4>Élément de Preuve (Anecdote)</h4>
-                    <p>Lors de la bascule critique ISO 20022 (voir réalisation ci-dessous), face à une paralysie technique à 3h du matin, j'ai refusé de céder à la panique. J'ai réorganisé les tâches, rassuré les experts séniors et coordonné la communication. Résultat : l'équipe s'est remobilisée et la solution a été trouvée en 45 minutes.</p>
-
-                    <h4>Autocritique & Évolution</h4>
-                    <p><strong>Niveau :</strong> Avancé en situation opérationnelle. <br>
-                    <strong>Limite :</strong> Je dois encore apprendre à déléguer plus rapidement avant que la crise n'atteigne son pic.<br>
-                    <strong>Futur :</strong> Cette compétence est le socle de mon futur rôle d'entrepreneur. Je la renforce actuellement par des lectures sur le management agile.</p>
-                </div>
-
-                <div class="skill-footer">
-                    <a href="#real-iso" class="circular-link"><i class="fas fa-link"></i> Voir la réalisation liée : Bascule ISO 20022</a>
-                </div>
-            </div>
-
             <div class="skill-card" id="comp-tech">
                 <div class="skill-header">
                     <i class="fas fa-server fa-2x"></i>
-                    <h3>Supervision des Flux Critiques (SWIFT)</h3>
+                    <h3>Pilotage Supervision SWIFT</h3>
                 </div>
-                
                 <div class="skill-body">
                     <h4>Ma Définition</h4>
-                    <p>La capacité à garantir l'intégrité, la disponibilité et la confidentialité des transactions financières mondiales. Ce n'est pas seulement du monitoring, c'est de l'<strong>anticipation proactive</strong> des incidents dans un environnement "Zero Downtime".</p>
-
-                    <h4>Élément de Preuve</h4>
-                    <p>Administration experte des outils <strong>SIRON (Embargo/AML)</strong> et de la <strong>Gateway SAG</strong>. Mise en place de dashboards de supervision proactifs pour les flux MT/MX. J'ai détecté une anomalie de formatage récurrente qui causait 15% des rejets. En corrigeant la source, j'ai optimisé le taux de traitement direct (STP).</p>
-
-                    <h4>Autocritique & Évolution</h4>
-                    <p><strong>Niveau :</strong> Expert sur les outils actuels (TransRep, DDA).<br>
-                    <strong>Évolution :</strong> Le passage à la Blockchain va transformer cette compétence. Je me forme actuellement aux "Smart Contracts" pour adapter ma supervision aux futurs ledgers distribués.</p>
+                    <p>Garantir l'intégrité et la disponibilité des transactions financières mondiales. Passer d'une posture réactive (traiter l'incident) à une posture proactive (analyser les tendances pour anticiper les blocages).</p>
+                    <h4>Preuve</h4>
+                    <p>Mise en place de dashboards pour analyser les flux MT/MX et détecter les anomalies de formatage en amont. Identification d'une erreur récurrente causant 15% des rejets et coordination avec l'IT et le Métier pour corriger la source.</p>
+                    <h4>Autocritique</h4>
+                    <p>Je progresse sur la "vente" de mes résultats techniques en interne.</p>
                 </div>
-
                 <div class="skill-footer">
-                    <a href="#real-supervision" class="circular-link"><i class="fas fa-link"></i> Voir la réalisation liée : Optimisation Flux</a>
+                    <a href="realisations.html#real-supervision" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir le projet DDA
+                    </a>
+                </div>
+            </div>
+
+            <div class="skill-card" id="comp-archi">
+                <div class="skill-header">
+                    <i class="fas fa-project-diagram fa-2x"></i>
+                    <h3>Architecture Hybride</h3>
+                </div>
+                <div class="skill-body">
+                    <h4>Ma Définition</h4>
+                    <p>L'architecture moderne ne consiste pas à opposer l'ancien et le nouveau, mais à les connecter. Capacité à concevoir des flux où le "Legacy" dialogue avec l'innovation (Blockchain) via des APIs sécurisées.</p>
+                    <h4>Preuve</h4>
+                    <p>Modélisation d'une architecture cible où le système Calypso initie des transactions via API vers une Blockchain privée (Wanopay), remplaçant la cascade de messages SWIFT.</p>
+                    <h4>Évolution</h4>
+                    <p>Approfondissement des connaissances en sécurité API (OAuth2, mTLS).</p>
+                </div>
+                <div class="skill-footer">
+                    <a href="realisations.html#real-transrep" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir Modernisation TransRep
+                    </a>
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <section class="container" style="background: #fff; border-top: 1px solid #eee;">
-        <h2>Mes Réalisations Majeures</h2>
-        <p style="text-align: center; margin-bottom: 50px;">Des projets concrets, analysés sous l'angle de la valeur ajoutée.</p>
+        <h2 id="humaines" style="margin-top: 80px;">Compétences Humaines</h2>
+        <div class="skills-grid">
 
-        <div id="real-iso" class="project-block">
-            <div class="project-header">
-                <h3><i class="fas fa-rocket"></i> Garantir la continuité financière mondiale : La Nuit du Basculement</h3>
-            </div>
-            
-            <div class="project-body">
-                <div class="project-grid">
-                    <div class="proj-section">
-                        <h4>1. Présentation & Contexte</h4>
-                        <p>Migration mondiale obligatoire des standards de paiement interbancaires (de MT vers ISO 20022). Un projet de 3 ans aboutissant à une nuit de bascule unique ("Big Bang") sans retour arrière possible.</p>
-                    </div>
-                    
-                    <div class="proj-section">
-                        <h4>2. Enjeux & Risques</h4>
-                        <p><strong>Enjeu :</strong> Conformité réglementaire mondiale (CBPR+). <br>
-                        <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec, avec impacts financiers et réputationnels désastreux.</p>
-                    </div>
-
-                    <div class="proj-section full-width">
-                        <h4>3. Étapes & Actions (Ce que j'ai fait)</h4>
-                        <ul>
-                            <li>Préparation des environnements de secours (DRP) et déploiement Gateway SAG.</li>
-                            <li>Exécution des scripts de mapping MT/MX en temps réel.</li>
-                            <li><strong>Coordination de crise :</strong> À 3h00, identification d'une erreur critique de balise XML. J'ai fédéré les équipes réseaux et applicatives pour isoler le bug.</li>
-                            <li>Validation des flux témoins avant l'ouverture des marchés.</li>
-                        </ul>
-                    </div>
-
-                    <div class="proj-section">
-                        <h4>4. Acteurs & Interactions</h4>
-                        <p>Travail en interface directe avec l'équipe Infrastructure (Paris), le Métier (Dakar/Lomé) et le support éditeur (Londres). Rôle de "traducteur" entre les exigences techniques et les impératifs business.</p>
-                    </div>
-
-                    <div class="proj-section">
-                        <h4>5. Résultats (KPIs)</h4>
-                        <div class="kpi-box" style="flex-direction: column; align-items: flex-start;">
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 10px;">
-                                <span>✅ Go-Live Réussi</span>
-                                <span>⚡ 0 min d'arrêt</span>
-                                <span>🛡️ 100% Conformité</span>
-                            </div>
-                            <p style="margin: 0; font-size: 0.9rem; border-top: 1px solid #ddd; padding-top: 10px; width: 100%;">
-                                <strong>Verdict :</strong> La banque a ouvert lundi matin sans aucun rejet de transaction.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="proj-section full-width">
-                        <h4>6. Regard Critique & Apports</h4>
-                        <p><strong>Ma valeur ajoutée :</strong> Mon calme et ma vision transverse ont permis d'éviter une décision de "Rollback" (retour en arrière) précipitée.<br>
-                        <strong>Enseignement :</strong> La technique ne suffit pas. C'est la communication humaine qui sauve les projets complexes.</p>
-                    </div>
-
-                    <div class="proj-section full-width">
-                        <h4>7. Lendemains du projet</h4>
-                        <p>Immédiat : Stabilisation des flux. <br>
-                        Aujourd'hui : Ce succès sert de modèle pour nos futures migrations Cloud. J'ai documenté la procédure de crise qui est devenue la norme.</p>
-                    </div>
+            <div class="skill-card" id="comp-federateur">
+                <div class="skill-header">
+                    <i class="fas fa-users-cog fa-2x"></i>
+                    <h3>Leadership Fédérateur</h3>
+                </div>
+                <div class="skill-body">
+                    <h4>Ma Définition</h4>
+                    <p>Maintenir la cohésion et la lucidité d'une équipe sous pression. Transformer le stress individuel en énergie collective.</p>
+                    <h4>Preuve</h4>
+                    <p>Coordination de crise à 3h du matin lors de la bascule ISO 20022. Organisation des tâches et remobilisation de l'équipe pour trouver la solution en 45 minutes.</p>
+                </div>
+                <div class="skill-footer">
+                    <a href="realisations.html#real-iso" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir La Nuit du Basculement
+                    </a>
                 </div>
             </div>
 
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées :</strong></p>
-                <a href="#comp-federateur" class="tag-link">Leadership Fédérateur</a>
-                <a href="#comp-tech" class="tag-link">Rigueur Technique</a>
-            </div>
-        </div>
-
-        <div id="real-supervision" class="project-block">
-            <div class="project-header">
-                <h3><i class="fas fa-chart-line"></i> Optimisation de la fiabilité opérationnelle : Chasse aux doublons</h3>
-            </div>
-            
-            <div class="project-body">
-                <div class="project-grid">
-                    <div class="proj-section">
-                        <h4>1. Présentation & Contexte</h4>
-                        <p>Dans un flux quotidien de milliers de transactions, la banque faisait face à des incidents récurrents de "doublons" (transactions envoyées deux fois), générant des pertes et des réclamations clients.</p>
-                    </div>
-                    
-                    <div class="proj-section">
-                        <h4>2. Enjeux & Objectifs</h4>
-                        <p>Réduire le risque financier opérationnel et restaurer la confiance des correspondants bancaires. Objectif : -50% d'incidents en 3 mois.</p>
-                    </div>
-
-                    <div class="proj-section full-width">
-                        <h4>3. Actions & Étapes</h4>
-                        <ul>
-                            <li>Audit des logs <strong>TransRep</strong> pour identifier la racine du problème (latence réseau vs erreur applicative).</li>
-                            <li>Configuration fine des règles de détection dans l'outil <strong>DDA (Duplicate Detection)</strong>.</li>
-                            <li>Mise en place de scripts d'alerte préventive (avant envoi SWIFT).</li>
-                            <li>Formation des équipes opérationnelles à la lecture des nouveaux indicateurs.</li>
-                        </ul>
-                    </div>
-
-                    <div class="proj-section full-width">
-                        <h4>4. Résultats & Lendemains</h4>
-                        <div class="kpi-box">
-                            <span>📉 -40% d'incidents</span>
-                            <span>⏱️ Gain temps : 2h/jour</span>
-                        </div>
-                        <p><strong>Critique :</strong> J'ai appris que l'outil le plus puissant n'est pas le code, mais la pédagogie envers les utilisateurs.</p>
-                    </div>
+            <div class="skill-card" id="comp-diplo">
+                <div class="skill-header">
+                    <i class="fas fa-handshake fa-2x"></i>
+                    <h3>Diplomatie Technique</h3>
+                </div>
+                <div class="skill-body">
+                    <h4>Ma Définition</h4>
+                    <p>Faire dialoguer développeurs et banquiers. Trouver le compromis sans compromettre la sécurité.</p>
+                    <h4>Preuve</h4>
+                    <p>Médiation lors du projet DDA : proposition d'une "télémaintenance supervisée" pour débloquer l'éditeur sans donner les droits admin refusés par la Sécurité.</p>
+                </div>
+                <div class="skill-footer">
+                    <a href="realisations.html#real-supervision" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir Projet DDA
+                    </a>
                 </div>
             </div>
 
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées :</strong></p>
-                <a href="#comp-tech" class="tag-link">Supervision Technique</a>
-                <a href="#comp-federateur" class="tag-link">Analyse de Risque</a>
+            <div class="skill-card" id="comp-resilience">
+                <div class="skill-header">
+                    <i class="fas fa-shield-alt fa-2x"></i>
+                    <h3>Résilience Opérationnelle</h3>
+                </div>
+                <div class="skill-body">
+                    <h4>Ma Définition</h4>
+                    <p>Capacité à continuer de raisonner logiquement quand tout s'effondre. Éviter la transmission de la panique.</p>
+                    <h4>Preuve</h4>
+                    <p>Refus de céder à l'urgence lors de l'incident critique ISO 20022. Analyse des logs à froid pendant que l'agitation régnait autour.</p>
+                </div>
+                <div class="skill-footer">
+                    <a href="realisations.html#real-iso" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir La Nuit du Basculement
+                    </a>
+                </div>
             </div>
-        </div>
 
+            <div class="skill-card" id="comp-ethique">
+                <div class="skill-header">
+                    <i class="fas fa-balance-scale fa-2x"></i>
+                    <h3>Éthique Bancaire</h3>
+                </div>
+                <div class="skill-body">
+                    <h4>Ma Définition</h4>
+                    <p>Le courage de dire "non" à une demande technique si elle contourne une règle de conformité.</p>
+                    <h4>Preuve</h4>
+                    <p>Refus systématique d'assouplir les filtres SIRON pour accélérer des transactions, proposant à la place des procédures d'escalade conformes.</p>
+                </div>
+                <div class="skill-footer">
+                    <a href="realisations.html#real-supervision" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir Projet DDA
+                    </a>
+                </div>
+            </div>
+
+            <div class="skill-card" id="comp-confid">
+                <div class="skill-header">
+                    <i class="fas fa-user-secret fa-2x"></i>
+                    <h3>Culture de la Confidentialité</h3>
+                </div>
+                <div class="skill-body">
+                    <h4>Ma Définition</h4>
+                    <p>Le réflexe de la "moindre exposition". Ne jamais donner une info sensible si elle n'est pas strictement nécessaire.</p>
+                    <h4>Preuve</h4>
+                    <p>Anonymisation systématique des données (IP, Ports, Noms) dans toutes les documentations techniques, y compris ce portfolio.</p>
+                </div>
+                <div class="skill-footer">
+                    <a href="realisations.html#real-transrep" class="btn-circular">
+                        <i class="fas fa-arrow-right"></i> Voir Projet TransRep
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Abdoul Aziz LO - Portfolio Expert ESIEA</p>
-        <div style="margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/lo-abdoul-aziz/" target="_blank" style="color: white; margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" onclick="document.getElementById('contactModal').style.display='block'" style="color: white; margin: 0 10px; font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
-        </div>
+        <p>&copy; 2025 Abdoul Aziz LO</p>
     </footer>
-
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 style="color:var(--primary-color); margin-bottom:20px;">Me Contacter</h2>
-            
-            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option">
-                <i class="fas fa-envelope-open-text"></i>
-                <span class="contact-label">ablo@et.intechinfo.fr</span>
-            </a>
-
-            <a href="tel:+33749411695" class="contact-option">
-                <i class="fas fa-mobile-alt"></i>
-                <span class="contact-label">07 49 41 16 95</span>
-            </a>
-        </div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Animation Vanta Waves
             try {
                 VANTA.WAVES({
-                  el: "#waves-hero",
-                  mouseControls: true, touchControls: true, gyroControls: false,
+                  el: "#waves-hero", mouseControls: true, touchControls: true, gyroControls: false,
                   minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
                   color: 0x005b96, shininess: 35.00, waveHeight: 20.00, waveSpeed: 0.75, zoom: 0.65
                 });
-            } catch (error) { console.log("Erreur Vanta : ", error); }
-
-            // Gestion Modale Contact
-            const modal = document.getElementById("contactModal");
-            const btn = document.getElementById("contactBtn");
-            const span = document.getElementsByClassName("close-btn")[0];
-
-            btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }
-            span.onclick = () => { modal.style.display = "none"; }
-            window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+            } catch (error) { console.log("Erreur Vanta"); }
         });
     </script>
-
 </body>
 </html>

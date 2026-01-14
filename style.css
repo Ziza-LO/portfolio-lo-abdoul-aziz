@@ -1,4 +1,4 @@
-/* style.css - Version Finale V4 (Corrigée & Interactive) */
+/* style.css - Version Finale V5 (Logos, Liens & Centrage) */
 
 :root {
     --primary-color: #005b96; /* Bleu Roi Ecobank */
@@ -18,9 +18,10 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg);
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
-/* === 1. ANIMATION GLOBE (RÉPARÉE) === */
+/* === 1. ANIMATION GLOBE === */
 @keyframes spin-earth {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -88,7 +89,6 @@ nav {
 .nav-links a:hover { color: var(--primary-color); background-color: rgba(0,91,150,0.05); border-radius: 5px; }
 .nav-links a.active { color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--accent-color); }
 
-/* Menu Déroulant */
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none;
@@ -139,14 +139,46 @@ nav {
 .hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; }
 .hero-content p { font-size: 1.2rem; font-weight: 300; }
 
-/* === 4. TIMELINE (ARBRE PARCOURS) - RÉPARÉ === */
+/* === 4. SECTIONS & CENTRAGE === */
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 60px 20px; 
+    display: block; /* Assure le comportement bloc */
+}
+
+/* Titres H2 centrés */
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center; /* Force le centrage du texte */
+    padding-top: 40px;
+    position: relative;
+    width: 100%;
+}
+h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-color); margin: 15px auto; }
+
+/* Boîte blanche centrée pour "Mon ADN" */
+.centered-box {
+    text-align: center; 
+    max-width: 900px; 
+    margin: 0 auto; /* Centre la boîte horizontalement */
+    line-height: 1.8; 
+    background: white; 
+    padding: 40px; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* === 5. TIMELINE (ARBRE PARCOURS) AVEC LOGOS === */
 .timeline {
     position: relative;
     max-width: 900px;
     margin: 50px auto;
 }
 
-/* La ligne centrale */
+/* Ligne centrale */
 .timeline::after {
     content: '';
     position: absolute;
@@ -158,7 +190,6 @@ nav {
     margin-left: -2px;
 }
 
-/* Le conteneur de chaque item (gauche ou droite) */
 .timeline-item {
     padding: 10px 40px;
     position: relative;
@@ -167,167 +198,106 @@ nav {
     box-sizing: border-box;
 }
 
-/* Positionnement Gauche / Droite */
 .timeline-item.left { left: 0; }
 .timeline-item.right { left: 50%; }
 
-/* Le Rond sur la ligne centrale */
+/* Point central */
 .timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: -10px; /* Pour ceux de gauche */
-    background-color: var(--white);
-    border: 4px solid var(--accent-color);
-    top: 20px;
-    border-radius: 50%;
-    z-index: 1;
+    content: ''; position: absolute; width: 20px; height: 20px;
+    right: -10px; background-color: var(--white);
+    border: 4px solid var(--accent-color); top: 30px; border-radius: 50%; z-index: 1;
 }
-.timeline-item.right::after {
-    left: -10px; /* Pour ceux de droite */
-}
+.timeline-item.right::after { left: -10px; }
 
-/* La Flèche qui pointe vers la ligne */
+/* Flèche */
 .timeline-item::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 25px;
-    width: 0;
-    z-index: 1;
-    right: 30px; /* Pour ceux de gauche */
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
+    content: " "; height: 0; position: absolute; top: 35px; width: 0; z-index: 1;
+    right: 30px; border: medium solid white;
+    border-width: 10px 0 10px 10px; border-color: transparent transparent transparent white;
 }
 .timeline-item.right::before {
-    left: 30px; /* Pour ceux de droite */
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    left: 30px; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent;
 }
 
-/* LE CONTENU (La boîte blanche) */
+/* Contenu Timeline */
 .timeline-content {
     padding: 20px;
     background-color: var(--white);
     border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* L'ombre importante */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
 }
+.timeline-content:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
 
-.timeline-content:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+/* NOUVEAU : En-tête avec Logo et Lien */
+.timeline-header-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
-.timeline-content h3 { color: var(--primary-color); margin-top: 0; }
-.timeline-content p { margin-bottom: 10px; font-weight: 500; }
+/* Style du Logo Miniature */
+.mini-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain; /* Garde les proportions */
+    border-radius: 50%; /* Rond */
+    border: 2px solid #eee;
+    background: #fff;
+    padding: 2px;
+}
+
+/* Titres */
+.timeline-title h3 { margin: 0; color: var(--primary-color); font-size: 1.1rem; }
+.timeline-title h4 { margin: 5px 0 0 0; font-size: 0.95rem; font-weight: 600; color: #555; display: flex; align-items: center; gap: 8px;}
+
+/* Lien Etablissement */
+.etablissement-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+.etablissement-link:hover { color: var(--accent-color); }
 
 /* Accordéon Détails */
 .timeline-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    opacity: 0;
+    max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; opacity: 0;
 }
 .timeline-content.active .timeline-details {
-    max-height: 500px;
-    opacity: 1;
-    margin-top: 15px;
-    border-top: 1px dashed #ddd;
-    padding-top: 10px;
-    transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+    max-height: 800px; opacity: 1; margin-top: 15px; border-top: 1px dashed #ddd; padding-top: 10px; transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
 }
-.toggle-icon { float: right; transition: transform 0.3s ease; color: var(--secondary-color); }
+.toggle-icon { margin-left: auto; transition: transform 0.3s ease; color: var(--secondary-color); }
 .timeline-content.active .toggle-icon { transform: rotate(180deg); }
 
-/* Listes dans la timeline */
 .timeline-details ul { padding-left: 20px; margin: 0; text-align: left; }
 .timeline-details li { margin-bottom: 5px; font-size: 0.9rem; }
 
-/* === 5. COMPÉTENCES & RÉALISATIONS === */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+/* === 6. FOOTER === */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
 }
-
-.skill-card {
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    padding: 30px;
-    border-top: 5px solid var(--primary-color);
-    transition: all 0.3s;
-    cursor: pointer;
+/* IMPORTANT : Couleur des icônes footer */
+.social-links a {
+    color: var(--white) !important;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+    display: inline-block;
 }
-.skill-card:hover { transform: translateY(-5px); border-top-color: var(--accent-color); }
+.social-links a:hover { color: var(--accent-color) !important; transform: scale(1.1); }
 
-.skill-header { display: flex; align-items: center; gap: 15px; color: var(--primary-color); margin-bottom: 15px; }
-.read-more-btn {
-    background: #f0f4f8; border: none; color: var(--primary-color);
-    font-weight: 700; padding: 8px 15px; border-radius: 20px; cursor: pointer;
-    font-size: 0.85rem; display: inline-flex; align-items: center; gap: 5px;
-}
-.skill-card.active { border-top-color: var(--accent-color); background-color: #fffdf5; }
-.skill-details { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ddd; animation: fadeIn 0.5s ease; }
-.skill-card.active .skill-details { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-/* Réalisations (Blocs larges) */
-.realisations-container { display: flex; flex-direction: column; gap: 60px; }
-.project-block {
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    overflow: hidden;
-    border-left: 6px solid var(--primary-color);
-    transition: all 0.3s;
-}
-.project-block:hover { transform: translateY(-5px); border-left-color: var(--accent-color); }
-.project-header { background: var(--primary-color); color: var(--white); padding: 20px 30px; }
-.project-body { padding: 30px; }
-.kpi-box { display: flex; gap: 20px; flex-wrap: wrap; background: #f0f4f8; padding: 20px; border-radius: 8px; margin-top: 10px;}
-.kpi-box span { font-weight: bold; color: var(--primary-color); }
-
-/* Liens Circulaires */
-.btn-circular {
-    display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; padding: 10px 20px;
-    background: var(--white); border: 1px solid var(--primary-color); color: var(--primary-color);
-    border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
-}
-.btn-circular:hover { background: var(--primary-color); color: var(--white); }
-.tag-link {
-    display: inline-block; background: var(--secondary-color); color: white;
-    padding: 6px 15px; border-radius: 20px; text-decoration: none;
-    font-size: 0.85rem; margin-right: 10px; margin-top: 5px; transition: 0.3s;
-}
-.tag-link:hover { background: var(--primary-color); transform: scale(1.05); }
-
-/* Effet CIBLE */
-:target { animation: highlight 2s ease-out; border: 2px solid var(--accent-color); scroll-margin-top: 120px; }
-@keyframes highlight { 0% { background-color: var(--accent-color); } 100% { background-color: transparent; } }
-
-/* === 6. FOOTER & MODALE === */
-footer { background: var(--dark-bg); color: var(--white); text-align: center; padding: 40px 0; }
-.social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: color 0.3s; }
-.social-links a:hover { color: var(--accent-color); }
-
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
-.modal-content { background-color: #fefefe; margin: 15% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; position: relative; }
-.close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; right: 20px; top: 10px; }
-.contact-option { margin: 20px 0; padding: 15px; background: #f4f7f6; border-radius: 10px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 15px; text-decoration: none; color: var(--text-color); }
-.contact-option:hover { background: white; border: 1px solid var(--primary-color); transform: translateY(-2px); }
-
-/* MOBILE */
+/* Mobile */
 @media (max-width: 768px) {
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
     .timeline-item::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
     .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
     .timeline-item.right { left: 0%; }
-    .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
 }

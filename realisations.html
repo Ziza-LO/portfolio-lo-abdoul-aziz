@@ -27,11 +27,12 @@
                     </div>
                 </li>
                 <li><a href="realisations.html" class="active">Réalisations</a></li>
+                <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="net-hero" style="height: 40vh;">
+    <section class="hero" id="hero-real" style="height: 40vh;">
         <div class="hero-content">
             <h1>Mes Réalisations</h1>
             <p>Projets concrets, analysés sous l'angle de la valeur ajoutée.</p>
@@ -47,26 +48,23 @@
             <div class="project-body">
                 <div class="proj-section">
                     <h4>1. Présentation & Contexte</h4>
-                    <p>Migration mondiale obligatoire des standards de paiement interbancaires (de MT vers ISO 20022). Un projet de 3 ans aboutissant à une nuit de bascule unique ("Big Bang") sans retour arrière possible.</p>
+                    <p>Migration mondiale obligatoire des standards de paiement interbancaires (de MT vers ISO 20022). Un projet de 3 ans aboutissant à une nuit de bascule unique.</p>
                 </div>
                 <div class="proj-section">
                     <h4>2. Enjeux & Risques</h4>
-                    <p><strong>Enjeu :</strong> Conformité réglementaire mondiale (CBPR+). <br>
-                    <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec, avec impacts financiers et réputationnels désastreux.</p>
+                    <p><strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec.</p>
                 </div>
                 <div class="proj-section">
                     <h4>3. Ce que j'ai fait</h4>
-                    <p>Préparation des environnements de secours (DRP) et déploiement Gateway SAG. Exécution des scripts de mapping MT/MX en temps réel.<br>
-                    <strong>Coordination de crise :</strong> À 3h00, identification d'une erreur critique de balise XML. J'ai fédéré les équipes réseaux et applicatives pour isoler le bug. Validation des flux témoins avant l'ouverture des marchés.</p>
+                    <p>Préparation des environnements de secours. Coordination de crise à 3h00 du matin suite à une erreur critique de balise XML. J'ai fédéré les équipes pour isoler le bug.</p>
                 </div>
                 <div class="proj-section">
-                    <h4>4. Résultats (KPIs)</h4>
+                    <h4>4. Résultats</h4>
                     <div class="kpi-box">
                         <span>✅ Go-Live Réussi</span>
                         <span>⚡ 0 min d'arrêt</span>
                         <span>🛡️ 100% Conformité</span>
                     </div>
-                    <p style="margin-top:10px; font-size:0.9rem;"><strong>Verdict :</strong> La banque a ouvert lundi matin sans aucun rejet de transaction.</p>
                 </div>
             </div>
             <div class="project-footer">
@@ -78,17 +76,16 @@
 
         <div id="real-supervision" class="project-block">
             <div class="project-header">
-                <h3><i class="fas fa-chart-line"></i> Sécurisation des Paiements (Projet DDA)</h3>
+                <h3><i class="fas fa-chart-line"></i> Sécurisation des Paiements (DDA)</h3>
             </div>
             <div class="project-body">
                 <div class="proj-section">
-                    <h4>1. Présentation & Contexte</h4>
-                    <p>Dans un flux quotidien de milliers de transactions, la banque faisait face à un risque opérationnel critique : l'émission de virements en double, générant des pertes financières sèches et des réclamations clients. J'ai piloté l'implémentation du moteur de détection DDA (Duplicate Detection Application) pour endiguer ce phénomène.</p>
+                    <h4>1. Contexte</h4>
+                    <p>Incidents récurrents de "doublons" (virements envoyés 2 fois). Perte financière sèche.</p>
                 </div>
                 <div class="proj-section">
-                    <h4>2. Actions & Acteurs</h4>
-                    <p>J'ai agi comme pivot entre l'éditeur AEG et les opérations. J'ai traduit les besoins métier en règles techniques de blocage (ex: bloquer si Montant + Bénéficiaire + Date sont identiques). J'ai supervisé la recette (UAT) et accompagné le déploiement en production.</p>
-                    <p><strong>Acteurs :</strong> Éditeur AEG (Tech), Infrastructure Interne (Réseau), Back-Office (Métier).</p>
+                    <h4>2. Actions</h4>
+                    <p>Pilotage de l'implémentation de DDA. Médiation entre l'Éditeur AEG et le Back-Office pour définir les règles de blocage.</p>
                 </div>
                 <div class="proj-section">
                     <h4>3. Résultats</h4>
@@ -96,7 +93,6 @@
                         <span>📉 -40% d'incidents</span>
                         <span>💰 Zero Loss</span>
                     </div>
-                    <p>Cet outil est désormais le "filet de sécurité" standard de la banque.</p>
                 </div>
             </div>
             <div class="project-footer">
@@ -109,23 +105,19 @@
 
         <div id="real-transrep" class="project-block">
             <div class="project-header">
-                <h3><i class="fas fa-database"></i> Modernisation de l'Archivage (TransRep)</h3>
+                <h3><i class="fas fa-database"></i> Modernisation TransRep</h3>
             </div>
             <div class="project-body">
                 <div class="proj-section">
                     <h4>1. Contexte</h4>
-                    <p>Face à l'obsolescence des serveurs Windows 2008 et au coût élevé des licences SWIFT, Ecobank devait moderniser son système d'archivage des messages financiers (TransRep).</p>
+                    <p>Obsolescence des serveurs et coût élevé des licences SWIFT. Besoin de migrer vers une version Web.</p>
                 </div>
                 <div class="proj-section">
-                    <h4>2. Objectifs</h4>
-                    <p>Migrer d'une architecture "Client Lourd" vers une architecture "Web" centralisée pour faciliter l'accès aux auditeurs, et réduire la dépendance aux licences SWIFT coûteuses.</p>
+                    <h4>2. Mon Rôle</h4>
+                    <p>Coordination de la migration technique (SQL/IIS). Gestion de la reprise des données historiques et interface Sécurité.</p>
                 </div>
                 <div class="proj-section">
-                    <h4>3. Ce que j'ai fait</h4>
-                    <p>J'ai coordonné la migration technique. J'ai supervisé l'installation des serveurs web (IIS) et bases de données (SQL), et géré la reprise des données historiques (Migration de millions de messages). J'ai assuré l'interface avec l'éditeur pour résoudre les problèmes de compatibilité ADK.</p>
-                </div>
-                <div class="proj-section">
-                    <h4>4. Résultats</h4>
+                    <h4>3. Résultats</h4>
                     <div class="kpi-box">
                         <span>🌍 Accès Web 50+ Users</span>
                         <span>💸 Économie Licences</span>
@@ -142,11 +134,34 @@
     </section>
 
     <footer><p>&copy; 2025 Abdoul Aziz LO</p></footer>
+    
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 style="color:var(--primary-color);">Me Contacter</h2>
+            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option">
+                <i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span>
+            </a>
+            <a href="tel:+33749411695" class="contact-option">
+                <i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span>
+            </a>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            try { VANTA.NET({ el: "#net-hero", color: 0xffca28, backgroundColor: 0x005b96, points: 12.00, maxDistance: 22.00, spacing: 18.00 }); } catch (e) {}
+            try { VANTA.NET({ el: "#hero-real", color: 0xffca28, backgroundColor: 0x005b96, points: 12.00, maxDistance: 22.00, spacing: 18.00 }); } catch (e) {}
+            
+            const modal = document.getElementById("contactModal");
+            const btn = document.getElementById("contactBtn");
+            const span = document.getElementsByClassName("close-btn")[0];
+            if(btn) {
+                btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }
+                span.onclick = () => { modal.style.display = "none"; }
+                window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+            }
         });
     </script>
 </body>

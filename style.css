@@ -1,9 +1,9 @@
-/* style.css - Design Portfolio Aziz LO - Version Finale Interactive */
+/* style.css - Version Finale Corrigée & Highlight */
 
 :root {
-    --primary-color: #005b96; /* Bleu Roi Ecobank/Tech */
+    --primary-color: #005b96; /* Bleu Roi Ecobank */
     --secondary-color: #6497b1;
-    --accent-color: #ffca28; /* Jaune/Or pour l'action et le focus */
+    --accent-color: #ffca28; /* Jaune/Or */
     --dark-bg: #1a1a1d;
     --light-bg: #f4f7f6;
     --text-color: #333;
@@ -20,28 +20,21 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- ANIMATION LOGO GLOBE --- */
-@keyframes spin-earth {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* === EFFET DE MISE EN ÉVIDENCE (CIBLAGE) === */
+/* Quand on arrive sur une section via un lien, elle clignote */
+:target {
+    animation: highlight 2s ease-out;
+    border: 2px solid var(--accent-color);
+    scroll-margin-top: 120px; /* Pour ne pas être caché par le menu */
+    background-color: #fffbe6;
 }
 
-.rotating-globe {
-    display: inline-block;
-    font-size: 3rem;
-    color: var(--primary-color);
-    animation: spin-earth 20s linear infinite;
-    text-shadow: 0 0 15px rgba(0, 91, 150, 0.6);
+@keyframes highlight {
+    0% { background-color: var(--accent-color); transform: scale(1.02); }
+    100% { background-color: #fffbe6; transform: scale(1); }
 }
 
-.logo:hover .rotating-globe {
-    color: var(--accent-color);
-    text-shadow: 0 0 15px rgba(255, 202, 40, 0.6);
-    animation-duration: 6s;
-    cursor: pointer;
-}
-
-/* --- NAVIGATION & MENU --- */
+/* --- NAVIGATION --- */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -69,13 +62,19 @@ nav {
     align-items: center;
 }
 
+.rotating-globe {
+    display: inline-block;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
 }
 
 .nav-links a {
@@ -83,29 +82,14 @@ nav {
     color: var(--text-color);
     font-weight: 500;
     transition: all 0.3s;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px;
 }
 
-/* Effet de survol sur le menu */
-.nav-links a:hover {
-    color: var(--primary-color);
-    background-color: rgba(0, 91, 150, 0.05);
-}
+.nav-links a:hover { color: var(--primary-color); }
+.nav-links a.active { color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--accent-color); }
 
-/* Menu Actif (Page en cours) */
-.nav-links a.active {
-    color: var(--primary-color);
-    font-weight: 700;
-    border-bottom: 2px solid var(--accent-color);
-}
-
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
+/* Menu Déroulant */
+.dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none;
     position: absolute;
@@ -114,30 +98,10 @@ nav {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1000;
     border-radius: 8px;
-    top: 100%;
-    left: -20px;
+    top: 100%; left: -20px;
 }
-
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    border-bottom: 1px solid #f1f1f1;
-}
-
-.dropdown-content a:hover {
-    background-color: #f9f9f9;
-    color: var(--primary-color);
-    padding-left: 20px; /* Petit effet de glissement */
-    border-left: 4px solid var(--accent-color);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.fa-caret-down { margin-left: 5px; font-size: 0.8rem; }
+.dropdown-content a { padding: 12px 16px; display: block; border-bottom: 1px solid #f1f1f1; }
+.dropdown:hover .dropdown-content { display: block; }
 
 .cta-btn {
     background-color: var(--primary-color);
@@ -145,25 +109,19 @@ nav {
     padding: 8px 20px !important;
     border-radius: 20px;
     transition: transform 0.3s;
-    text-decoration: none;
 }
+.cta-btn:hover { transform: scale(1.05); background-color: var(--accent-color); color: #333 !important; }
 
-.cta-btn:hover {
-    transform: scale(1.05);
-    background-color: var(--accent-color);
-    color: #333 !important;
-}
-
-/* --- HERO SECTION --- */
+/* --- HERO & SECTIONS --- */
 .hero {
-    height: 90vh;
+    height: 60vh; /* Réduit pour éviter trop de vide */
     background-color: #1a1a1d;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
-    margin-top: 60px;
+    margin-top: 80px;
     position: relative;
     overflow: hidden;
 }
@@ -171,16 +129,15 @@ nav {
 .hero-content {
     position: relative;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     padding: 40px;
     border-radius: 15px;
-    backdrop-filter: blur(5px);
+    max-width: 800px;
 }
 
-.hero-content h1 { font-size: 3rem; margin-bottom: 10px; }
-.hero-content p { font-size: 1.5rem; margin-bottom: 30px; font-weight: 300; }
+.hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.hero-content p { font-size: 1.2rem; font-weight: 300; }
 
-/* --- SECTIONS --- */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -193,197 +150,117 @@ h2 {
     margin-bottom: 40px;
     text-align: center;
     position: relative;
-    padding-top: 20px;
+    padding-top: 40px; /* Espace pour les ancres */
 }
-
 h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--accent-color);
-    margin: 10px auto;
+    content: ''; display: block; width: 60px; height: 4px;
+    background: var(--accent-color); margin: 15px auto;
 }
 
-/* --- CARTES COMPÉTENCES & PROJETS (INTERACTIF) --- */
+/* --- PAGE COMPÉTENCES (GRILLE) --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-/* Style de base des cartes */
-.skill-card, .project-block {
+.skill-card {
     background: var(--white);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease; /* Transition fluide */
     padding: 30px;
     border-top: 5px solid var(--primary-color);
-    position: relative;
-    overflow: hidden;
-    cursor: default;
-}
-
-/* === EFFET DE SURVOL (HIGHLIGHT) === */
-.skill-card:hover, .project-block:hover {
-    transform: translateY(-5px); /* Monte légèrement */
-    box-shadow: 0 15px 30px rgba(0, 91, 150, 0.15); /* Ombre plus forte */
-    border-top-color: var(--accent-color); /* La bordure devient jaune */
-}
-
-/* === EFFET ACTIF (QUAND CLIQUÉ/DÉPLIÉ) === */
-.skill-card.active {
-    border-top: 5px solid var(--accent-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: #fffdf5; /* Fond très légèrement jaune pour marquer l'activité */
+    transition: all 0.3s;
 }
 
 .skill-header {
+    display: flex; align-items: center; gap: 15px;
+    color: var(--primary-color); margin-bottom: 15px; cursor: pointer;
+}
+
+/* Accordéon Détails */
+.skill-details {
+    display: none; /* Caché par défaut */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    animation: fadeIn 0.5s;
+}
+.skill-card.active .skill-details { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.read-more-btn {
+    background: none; border: none; color: var(--secondary-color);
+    font-weight: bold; cursor: pointer; font-size: 0.9rem;
+    display: flex; align-items: center; gap: 5px; margin-top: 10px;
+}
+.skill-card.active .read-more-btn i { transform: rotate(180deg); }
+
+/* --- PAGE RÉALISATIONS (MODE "PAVÉ" / OLD STYLE) --- */
+/* On ne met PAS de grille ici, on veut des blocs l'un sous l'autre */
+.realisations-container {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    cursor: pointer;
+    flex-direction: column;
+    gap: 60px; /* Espace entre les gros projets */
+}
+
+.project-block {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border-left: 6px solid var(--primary-color); /* Bordure à gauche style dossier */
 }
 
 .project-header {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.project-header h3 {
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Contenu caché pour l'accordéon */
-.skill-details {
-    display: none; 
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed #eee;
-    animation: fadeIn 0.5s;
-}
-
-/* Affichage quand actif */
-.skill-card.active .skill-details {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Bouton "En savoir plus" */
-.read-more-btn {
-    background: none;
-    border: none;
-    color: var(--secondary-color);
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
-    transition: color 0.3s;
-}
-
-.skill-card:hover .read-more-btn {
-    color: var(--primary-color); /* Change de couleur au survol de la carte */
-}
-
-.skill-card.active .read-more-btn i {
-    transform: rotate(180deg);
-}
-
-/* Styles textes */
-.proj-section h4, .skill-details h4 {
-    color: var(--primary-color);
-    font-size: 1rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-left: 3px solid var(--accent-color);
-    padding-left: 10px;
-}
-
-.skill-summary p { font-size: 0.95rem; color: #666; }
-
-/* KPIs & Liens Circulaires */
-.kpi-box { display: flex; gap: 15px; flex-wrap: wrap; background: #f0f4f8; padding: 15px; border-radius: 8px; margin-top:10px; }
-.kpi-box span { font-weight: bold; font-size: 0.9rem; color: var(--primary-color); }
-
-.project-footer { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
-
-/* Bouton lien circulaire (Page Compétences) */
-.btn-circular {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--white);
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.btn-circular:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-    box-shadow: 0 4px 10px rgba(0,91,150,0.2);
-}
-
-/* Tag lien circulaire (Page Réalisations) */
-.tag-link {
-    display: inline-block;
-    background: var(--secondary-color);
-    color: white;
-    padding: 6px 15px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin-right: 10px;
-    margin-top: 5px;
-    transition: all 0.3s;
-}
-
-.tag-link:hover {
     background: var(--primary-color);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    color: var(--white);
+    padding: 20px 30px;
+}
+.project-header h3 { margin: 0; display: flex; align-items: center; gap: 10px; }
+
+.project-body { padding: 30px; }
+
+.proj-section { margin-bottom: 25px; }
+.proj-section h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-/* Modale & Footer */
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
-.modal-content { background-color: #fefefe; margin: 15% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; position: relative; animation: slideDown 0.4s ease; }
-@keyframes slideDown { from {transform: translateY(-50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
-.close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; right: 20px; top: 10px; }
-.close-btn:hover { color: var(--primary-color); }
-.contact-option { margin: 20px 0; padding: 15px; background: #f4f7f6; border-radius: 10px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 15px; text-decoration: none; color: var(--text-color); border: 1px solid transparent; }
-.contact-option:hover { background: white; border-color: var(--primary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.05); transform: translateY(-2px); }
-footer { background: var(--dark-bg); color: var(--white); text-align: center; padding: 40px 0; }
+/* KPIs */
+.kpi-box {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    background: #f0f4f8; padding: 20px; border-radius: 8px;
+    border: 1px solid #d1e3f0;
+}
+.kpi-box span { font-weight: bold; color: var(--primary-color); }
 
-/* Responsive Mobile */
-@media screen and (max-width: 768px) {
-    nav { flex-direction: column; padding: 15px; }
-    .nav-links { gap: 10px; font-size: 0.9rem; flex-wrap: wrap; justify-content: center; }
-    .dropdown-content { position: static; box-shadow: none; border-left: 2px solid var(--accent-color); margin-left: 10px; display: none; width: 100%;}
-    .project-grid { grid-template-columns: 1fr; }
+/* Liens Circulaires */
+.btn-circular {
+    display: inline-block; margin-top: 20px; padding: 10px 20px;
+    background: var(--primary-color); color: white; border-radius: 30px;
+    text-decoration: none; font-size: 0.9rem; transition: 0.3s;
+}
+.btn-circular:hover { background: var(--accent-color); color: #333; }
+
+.project-footer {
+    background: #f9f9f9; padding: 20px 30px;
+    border-top: 1px solid #eee;
+}
+.tag-link {
+    display: inline-block; background: var(--secondary-color); color: white;
+    padding: 6px 15px; border-radius: 20px; text-decoration: none;
+    font-size: 0.85rem; margin-right: 10px; margin-top: 5px; transition: 0.3s;
+}
+.tag-link:hover { background: var(--primary-color); transform: translateY(-2px); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav { flex-direction: column; padding: 20px; }
+    .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .project-grid, .skills-grid { grid-template-columns: 1fr; }
 }

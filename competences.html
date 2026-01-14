@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compétences - Abdoul Aziz LO</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,12 +12,11 @@
         <nav>
             <a href="index.html" class="logo">
                 <i class="fas fa-globe rotating-globe"></i>
-                <div style="display: flex; flex-direction: column; margin-left: 10px; line-height: 1.1;">
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666; letter-spacing: 1px;">Ingénieur IT SWIFT & Moyens de Paiement</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT</span>
                 </div>
             </a>
-            
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li class="dropdown">
@@ -29,15 +27,14 @@
                     </div>
                 </li>
                 <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="waves-hero" style="height: 50vh;">
+    <section class="hero" id="waves-hero" style="height: 40vh;">
         <div class="hero-content">
             <h1>Mes Compétences</h1>
-            <p>Cliquez sur les cartes pour découvrir les détails et les preuves.</p>
+            <p>Cliquez sur "Voir le détail" pour lire l'analyse complète.</p>
         </div>
     </section>
 
@@ -51,21 +48,21 @@
                     <i class="fas fa-server fa-2x"></i>
                     <h3>Pilotage Supervision SWIFT</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Garantir l'intégrité et la disponibilité des transactions financières mondiales.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
                     <p>Superviser SWIFT, ce n'est pas seulement surveiller des écrans de monitoring. C'est garantir l'intégrité et la disponibilité des transactions financières mondiales de la banque. C'est passer d'une posture réactive (traiter l'incident) à une posture proactive (analyser les tendances pour anticiper les blocages).</p>
-                    <h4>Preuve</h4>
-                    <p>Mise en place de dashboards MT/MX. Identification d'une erreur récurrente causant 15% des rejets et coordination corrective pour optimiser le STP.</p>
-                    <h4>Autocritique</h4>
-                    <p>Je progresse sur la "vente" de mes résultats techniques en interne.</p>
+                    
+                    <h4>Élément de Preuve</h4>
+                    <p>Dans mon rôle d'apprenti expert, je ne me contente pas d'exécuter. J'agis comme Coordinateur Technique sur les outils de filtrage. J'ai mis en place des tableaux de bord pour analyser les flux MT/MX et détecter les anomalies de formatage en amont. J'ai par exemple identifié une erreur récurrente causant 15% des rejets et j'ai coordonné l'action entre l'IT et le Métier pour corriger la source du problème, optimisant ainsi le taux de traitement direct (STP).</p>
+                    
+                    <h4>Autocritique & Évolution</h4>
+                    <p><strong>Critique :</strong> J'ai longtemps pensé que la résolution technique suffisait. J'ai appris que sans communication claire vers le métier, une optimisation technique reste invisible. Je progresse aujourd'hui sur la "vente" de mes résultats en interne.<br>
+                    <strong>Évolution :</strong> Je me forme aux impacts de la Blockchain sur ces flux de supervision pour adapter mes compétences aux futurs standards décentralisés.</p>
                     
                     <a href="realisations.html#real-supervision" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : Projet DDA
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : Projet DDA
                     </a>
                 </div>
             </div>
@@ -75,25 +72,24 @@
                     <i class="fas fa-project-diagram fa-2x"></i>
                     <h3>Architecture Hybride</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Connecter le "Legacy" à la Blockchain via APIs sécurisées.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
                     <p>L'architecture moderne ne consiste pas à opposer l'ancien et le nouveau, mais à les connecter intelligemment. C'est la capacité à concevoir des flux où le "Legacy" (Core Banking) dialogue avec l'innovation (Blockchain) via des APIs sécurisées.</p>
-                    <h4>Preuve</h4>
-                    <p>Modélisation de l'architecture Wanopay : Calypso initie des transactions via API vers une Blockchain privée, remplaçant la cascade SWIFT.</p>
-                    <h4>Évolution</h4>
-                    <p>Approfondissement des connaissances en sécurité API (OAuth2, mTLS).</p>
+                    
+                    <h4>Élément de Preuve</h4>
+                    <p>Dans le cadre de mon étude Wanopay, j'ai modélisé une architecture cible où le système Calypso initie des transactions. Au lieu de générer une cascade de messages SWIFT, j'ai proposé un flux où Calypso appelle une API pour créer un "Token" sur une Blockchain privée. J'ai dû m'assurer que ce nouveau flux respectait les contraintes de sécurité bancaire (traçabilité, intégrité).</p>
+                    
+                    <h4>Autocritique & Évolution</h4>
+                    <p><strong>Niveau :</strong> Capable de concevoir des workflows fonctionnels et techniques.<br>
+                    <strong>Évolution :</strong> Je souhaite approfondir mes connaissances en sécurité API (OAuth2, mTLS) pour être capable de sécuriser moi-même ces interconnexions à l'avenir.</p>
                     
                     <a href="realisations.html#real-transrep" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : Modernisation TransRep
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : TransRep / Wanopay
                     </a>
                 </div>
             </div>
-
         </div>
 
         <h2 id="humaines" style="margin-top: 80px;">Compétences Humaines</h2>
@@ -104,17 +100,15 @@
                     <i class="fas fa-users-cog fa-2x"></i>
                     <h3>Leadership Fédérateur</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Maintenir la cohésion et la lucidité d'une équipe sous pression.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
-                    <p>Le leadership n'est pas une autorité hiérarchique, mais la capacité à maintenir la cohésion et la lucidité d'une équipe sous pression. C'est transformer le stress individuel en énergie collective.</p>
+                    <p>Dans un contexte de production critique, le leadership n'est pas une autorité hiérarchique, mais la capacité à maintenir la cohésion et la lucidité d'une équipe sous pression. C'est transformer le stress individuel en énergie collective.</p>
                     <h4>Preuve</h4>
-                    <p>Coordination de crise à 3h du matin (ISO 20022). Organisation des tâches et remobilisation de l'équipe pour trouver la solution en 45 min.</p>
+                    <p>Lors de la bascule critique ISO 20022 (voir réalisation liée), face à une paralysie technique à 3h du matin, j'ai refusé de céder à la panique. J'ai réorganisé les tâches, rassuré les experts séniors et coordonné la communication. Résultat : l'équipe s'est remobilisée et la solution a été trouvée en 45 minutes.</p>
+                    
                     <a href="realisations.html#real-iso" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : La Nuit du Basculement
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : La Nuit du Basculement
                     </a>
                 </div>
             </div>
@@ -124,17 +118,15 @@
                     <i class="fas fa-handshake fa-2x"></i>
                     <h3>Diplomatie Technique</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Faire dialoguer Devs et Banquiers. Trouver le compromis.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
-                    <p>C'est la capacité à faire dialoguer deux mondes qui ne se comprennent pas : des développeurs externes (focalisés sur le code) et des banquiers (focalisés sur le risque). C'est trouver le compromis sans jamais compromettre la sécurité.</p>
+                    <p>C'est la capacité à faire dialoguer deux mondes qui ne se comprennent pas : des développeurs externes (focalisés sur le code et la rapidité) et des banquiers (focalisés sur le risque et la conformité). C'est trouver le compromis sans jamais compromettre la sécurité.</p>
                     <h4>Preuve</h4>
-                    <p>Médiation Projet DDA : proposition de "télémaintenance supervisée" pour débloquer l'éditeur sans donner les droits admin.</p>
+                    <p>Lors du projet DDA, l'éditeur exigeait des droits d'administration sur nos serveurs que la Sécurité refusait catégoriquement. Le projet était bloqué. J'ai organisé une médiation et proposé une solution de "télémaintenance supervisée" (partage d'écran où je tape les commandes dictées par l'éditeur). Cela a débloqué la situation technique tout en respectant scrupuleusement nos règles de sécurité.</p>
+                    
                     <a href="realisations.html#real-supervision" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : Projet DDA
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : Projet DDA
                     </a>
                 </div>
             </div>
@@ -144,17 +136,15 @@
                     <i class="fas fa-shield-alt fa-2x"></i>
                     <h3>Résilience Opérationnelle</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Raisonner logiquement quand tout s'effondre.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
-                    <p>La résilience, c'est la capacité à continuer de raisonner logiquement quand tout semble s'effondrer. C'est éviter la transmission de la panique à l'équipe lors d'un incident critique.</p>
+                    <p>La résilience en production bancaire, ce n'est pas l'absence de stress, mais la capacité à continuer de raisonner logiquement quand tout semble s'effondrer. C'est éviter la transmission de la panique à l'équipe lors d'un incident critique.</p>
                     <h4>Preuve</h4>
-                    <p>Refus de céder à l'urgence lors de l'incident ISO 20022. Analyse des logs à froid pendant l'agitation.</p>
+                    <p>Lors de la "Nuit du Basculement ISO 20022", face à une erreur bloquante à 3h du matin, j'ai refusé de céder à l'urgence. Je me suis isolé 5 minutes pour analyser les logs à froid, ce qui a permis de trouver la solution (un tag XML malformé) rapidement, là où l'agitation collective nous faisait perdre du temps.</p>
+                    
                     <a href="realisations.html#real-iso" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : La Nuit du Basculement
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : La Nuit du Basculement
                     </a>
                 </div>
             </div>
@@ -164,17 +154,15 @@
                     <i class="fas fa-balance-scale fa-2x"></i>
                     <h3>Éthique Bancaire</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Le courage de dire "non" pour protéger l'institution.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
-                    <p>Dans la banque, l'éthique dépasse le cadre légal. C'est la conscience morale que derrière chaque ligne de code, il y a un impact réel. C'est le courage de dire "non" à une demande technique si elle contourne une règle de conformité.</p>
+                    <p>Dans la banque, l'éthique dépasse le cadre légal. C'est la conscience morale que derrière chaque ligne de code ou chaque flux validé, il y a un impact réel (sanctions internationales, lutte contre le blanchiment). C'est le courage de dire "non" à une demande technique si elle contourne une règle de conformité.</p>
                     <h4>Preuve</h4>
-                    <p>Refus systématique d'assouplir les filtres SIRON pour accélérer des transactions, proposant à la place des procédures d'escalade conformes.</p>
+                    <p>Lors de la configuration des règles de filtrage SIRON, j'ai parfois été sollicité pour "assouplir" temporairement certains filtres afin d'accélérer des transactions urgentes. J'ai systématiquement refusé ces contournements, préférant proposer une procédure d'escalade accélérée mais conforme. Ma responsabilité est de protéger la licence bancaire de l'institution avant la rapidité.</p>
+                    
                     <a href="realisations.html#real-supervision" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : Projet DDA
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : Projet DDA
                     </a>
                 </div>
             </div>
@@ -182,19 +170,17 @@
             <div class="skill-card" id="comp-confid">
                 <div class="skill-header">
                     <i class="fas fa-user-secret fa-2x"></i>
-                    <h3>Culture de la Confidentialité</h3>
+                    <h3>Confidentialité</h3>
                 </div>
-                <div class="skill-summary">
-                    <p>Le réflexe de la "moindre exposition" des données sensibles.</p>
-                    <button class="read-more-btn">Voir le détail <i class="fas fa-chevron-down"></i></button>
-                </div>
+                <button class="read-more-btn">Voir le détail complet <i class="fas fa-chevron-down"></i></button>
                 <div class="skill-details">
                     <h4>Ma Définition</h4>
-                    <p>C'est le réflexe permanent de la "moindre exposition". Ne jamais donner une information technique sensible si elle n'est pas strictement nécessaire, même à un partenaire de confiance.</p>
+                    <p>C'est le réflexe permanent de la "moindre exposition". Dans un environnement où nous manipulons des données sensibles, la confidentialité n'est pas une option, c'est une hygiène de travail. C'est ne jamais donner une information technique sensible si elle n'est pas strictement nécessaire, même à un partenaire de confiance.</p>
                     <h4>Preuve</h4>
-                    <p>Anonymisation systématique des données (IP, Ports, Noms clients) dans toutes les documentations techniques, y compris ce portfolio.</p>
+                    <p>Lors de la rédaction des documentations techniques pour le support niveau 1, j'ai dû décrire le fonctionnement de l'infrastructure SWIFT. Au lieu de copier les configurations réelles, j'ai systématiquement anonymisé les données (IP, Ports, Noms clients) et créé des schémas abstraits. J'applique ce même principe à mon Portfolio professionnel, prouvant ma compétence sans jamais exposer la cartographie interne d'Ecobank.</p>
+                    
                     <a href="realisations.html#real-transrep" class="btn-circular">
-                        <i class="fas fa-link"></i> Voir la preuve : Projet TransRep
+                        <i class="fas fa-arrow-right"></i> Voir la preuve : Projet TransRep
                     </a>
                 </div>
             </div>
@@ -202,33 +188,27 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Abdoul Aziz LO</p>
-    </footer>
+    <footer><p>&copy; 2025 Abdoul Aziz LO</p></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-    
     <script>
+        // SCRIPT ACCORDEON
         document.addEventListener("DOMContentLoaded", function() {
-            try {
-                VANTA.WAVES({
-                  el: "#waves-hero", mouseControls: true, touchControls: true, gyroControls: false,
-                  minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
-                  color: 0x005b96, shininess: 35.00, waveHeight: 20.00, waveSpeed: 0.75, zoom: 0.65
-                });
-            } catch (error) { console.log("Erreur Vanta"); }
+            try { VANTA.WAVES({ el: "#waves-hero", color: 0x005b96, shininess: 35.00, waveHeight: 20.00, zoom: 0.65 }); } catch (e) {}
 
             const cards = document.querySelectorAll('.skill-card');
             cards.forEach(card => {
                 const btn = card.querySelector('.read-more-btn');
                 const header = card.querySelector('.skill-header');
                 const toggleCard = () => {
+                    // Ferme les autres si tu veux (optionnel)
                     cards.forEach(c => { if (c !== card) c.classList.remove('active'); });
+                    
                     card.classList.toggle('active');
                     if (card.classList.contains('active')) {
                         btn.innerHTML = 'Masquer les détails <i class="fas fa-chevron-up"></i>';
                     } else {
-                        btn.innerHTML = 'Voir le détail <i class="fas fa-chevron-down"></i>';
+                        btn.innerHTML = 'Voir le détail complet <i class="fas fa-chevron-down"></i>';
                     }
                 };
                 btn.addEventListener('click', toggleCard);

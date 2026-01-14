@@ -1,4 +1,4 @@
-/* style.css - Version Finale V3 (Corrigée & Interactive) */
+/* style.css - Version Finale V4 (Corrigée & Interactive) */
 
 :root {
     --primary-color: #005b96; /* Bleu Roi Ecobank */
@@ -20,7 +20,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* === 1. ANIMATION GLOBE (CORRIGÉE) === */
+/* === 1. ANIMATION GLOBE (RÉPARÉE) === */
 @keyframes spin-earth {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -30,12 +30,11 @@ body {
     display: inline-block;
     font-size: 2.5rem;
     color: var(--primary-color);
-    animation: spin-earth 20s linear infinite; /* Tourne en permanence */
+    animation: spin-earth 20s linear infinite;
     margin-right: 10px;
     transition: all 0.3s ease;
 }
 
-/* Au survol du LOGO, le globe change de couleur et accélère un peu */
 .logo:hover .rotating-globe {
     color: var(--accent-color);
     text-shadow: 0 0 15px rgba(255, 202, 40, 0.8);
@@ -89,6 +88,7 @@ nav {
 .nav-links a:hover { color: var(--primary-color); background-color: rgba(0,91,150,0.05); border-radius: 5px; }
 .nav-links a.active { color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--accent-color); }
 
+/* Menu Déroulant */
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none;
@@ -113,10 +113,10 @@ nav {
 }
 .cta-btn:hover { transform: scale(1.05); background-color: var(--accent-color); color: #333 !important; }
 
-/* === 3. HERO SECTION (ANIMATION) === */
+/* === 3. HERO SECTION === */
 .hero {
     height: 60vh;
-    background-color: #1a1a1d; /* Fallback si le JS plante */
+    background-color: #1a1a1d; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +130,7 @@ nav {
 .hero-content {
     position: relative;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.6); /* Plus sombre pour lisibilité */
+    background: rgba(0, 0, 0, 0.6);
     padding: 40px;
     border-radius: 15px;
     max-width: 800px;
@@ -139,19 +139,116 @@ nav {
 .hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; }
 .hero-content p { font-size: 1.2rem; font-weight: 300; }
 
-/* === 4. COMPÉTENCES (ACCORDÉON & RÉSUMÉ) === */
-.container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-
-h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-align: center;
-    padding-top: 40px;
+/* === 4. TIMELINE (ARBRE PARCOURS) - RÉPARÉ === */
+.timeline {
     position: relative;
+    max-width: 900px;
+    margin: 50px auto;
 }
-h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-color); margin: 15px auto; }
 
+/* La ligne centrale */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* Le conteneur de chaque item (gauche ou droite) */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Positionnement Gauche / Droite */
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+/* Le Rond sur la ligne centrale */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px; /* Pour ceux de gauche */
+    background-color: var(--white);
+    border: 4px solid var(--accent-color);
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item.right::after {
+    left: -10px; /* Pour ceux de droite */
+}
+
+/* La Flèche qui pointe vers la ligne */
+.timeline-item::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 25px;
+    width: 0;
+    z-index: 1;
+    right: 30px; /* Pour ceux de gauche */
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+.timeline-item.right::before {
+    left: 30px; /* Pour ceux de droite */
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* LE CONTENU (La boîte blanche) */
+.timeline-content {
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* L'ombre importante */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.timeline-content h3 { color: var(--primary-color); margin-top: 0; }
+.timeline-content p { margin-bottom: 10px; font-weight: 500; }
+
+/* Accordéon Détails */
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    opacity: 0;
+}
+.timeline-content.active .timeline-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+    border-top: 1px dashed #ddd;
+    padding-top: 10px;
+    transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+}
+.toggle-icon { float: right; transition: transform 0.3s ease; color: var(--secondary-color); }
+.timeline-content.active .toggle-icon { transform: rotate(180deg); }
+
+/* Listes dans la timeline */
+.timeline-details ul { padding-left: 20px; margin: 0; text-align: left; }
+.timeline-details li { margin-bottom: 5px; font-size: 0.9rem; }
+
+/* === 5. COMPÉTENCES & RÉALISATIONS === */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -165,88 +262,23 @@ h2::after { content: ''; display: block; width: 60px; height: 4px; background: v
     padding: 30px;
     border-top: 5px solid var(--primary-color);
     transition: all 0.3s;
-    cursor: pointer; /* Indique qu'on peut cliquer */
-}
-
-/* EFFET DE MISE EN ÉVIDENCE AU SURVOL */
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 91, 150, 0.15);
-    border-top-color: var(--accent-color); /* La barre devient jaune */
-}
-
-.skill-header {
-    display: flex; align-items: center; gap: 15px;
-    color: var(--primary-color); margin-bottom: 15px;
-}
-
-/* Le Résumé (visible tout le temps) */
-.skill-summary p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-/* Le Bouton Voir Détails */
-.read-more-btn {
-    background: #f0f4f8;
-    border: none;
-    color: var(--primary-color);
-    font-weight: 700;
-    padding: 8px 15px;
-    border-radius: 20px;
     cursor: pointer;
-    font-size: 0.85rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: all 0.3s;
 }
-.read-more-btn:hover { background: var(--accent-color); color: #333; }
+.skill-card:hover { transform: translateY(-5px); border-top-color: var(--accent-color); }
 
-/* Le contenu détaillé (Caché par défaut) */
-.skill-details {
-    display: none;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed #ddd;
-    animation: fadeIn 0.5s ease;
+.skill-header { display: flex; align-items: center; gap: 15px; color: var(--primary-color); margin-bottom: 15px; }
+.read-more-btn {
+    background: #f0f4f8; border: none; color: var(--primary-color);
+    font-weight: 700; padding: 8px 15px; border-radius: 20px; cursor: pointer;
+    font-size: 0.85rem; display: inline-flex; align-items: center; gap: 5px;
 }
-
-/* Quand la carte est active (cliquée) */
-.skill-card.active {
-    border-top-color: var(--accent-color);
-    background-color: #fffdf5; /* Fond légèrement teinté */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+.skill-card.active { border-top-color: var(--accent-color); background-color: #fffdf5; }
+.skill-details { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ddd; animation: fadeIn 0.5s ease; }
 .skill-card.active .skill-details { display: block; }
-.skill-card.active .read-more-btn i { transform: rotate(180deg); }
-
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Styles dans les détails */
-.skill-details h4 {
-    color: var(--primary-color);
-    font-size: 1rem;
-    margin-top: 20px;
-    margin-bottom: 8px;
-    border-left: 3px solid var(--accent-color);
-    padding-left: 10px;
-}
-
-.btn-circular {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin-top: 20px; padding: 10px 20px;
-    background: var(--white); border: 1px solid var(--primary-color);
-    color: var(--primary-color); border-radius: 30px;
-    text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
-}
-.btn-circular:hover { background: var(--primary-color); color: var(--white); }
-
-/* === 5. RÉALISATIONS (STYLE PAVÉ LARGE) === */
+/* Réalisations (Blocs larges) */
 .realisations-container { display: flex; flex-direction: column; gap: 60px; }
-
 .project-block {
     background: var(--white);
     border-radius: 12px;
@@ -256,37 +288,46 @@ h2::after { content: ''; display: block; width: 60px; height: 4px; background: v
     transition: all 0.3s;
 }
 .project-block:hover { transform: translateY(-5px); border-left-color: var(--accent-color); }
-
 .project-header { background: var(--primary-color); color: var(--white); padding: 20px 30px; }
-.project-header h3 { margin: 0; display: flex; align-items: center; gap: 10px; }
 .project-body { padding: 30px; }
-
-.proj-section h4 { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 12px; }
-.kpi-box { display: flex; gap: 20px; flex-wrap: wrap; background: #f0f4f8; padding: 20px; border-radius: 8px; }
+.kpi-box { display: flex; gap: 20px; flex-wrap: wrap; background: #f0f4f8; padding: 20px; border-radius: 8px; margin-top: 10px;}
 .kpi-box span { font-weight: bold; color: var(--primary-color); }
 
-.project-footer { background: #f9f9f9; padding: 20px 30px; border-top: 1px solid #eee; }
+/* Liens Circulaires */
+.btn-circular {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; padding: 10px 20px;
+    background: var(--white); border: 1px solid var(--primary-color); color: var(--primary-color);
+    border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
+}
+.btn-circular:hover { background: var(--primary-color); color: var(--white); }
 .tag-link {
     display: inline-block; background: var(--secondary-color); color: white;
-    padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 0.85rem; margin-right: 10px; transition: 0.3s;
+    padding: 6px 15px; border-radius: 20px; text-decoration: none;
+    font-size: 0.85rem; margin-right: 10px; margin-top: 5px; transition: 0.3s;
 }
-.tag-link:hover { background: var(--primary-color); transform: scale(1.05); box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
+.tag-link:hover { background: var(--primary-color); transform: scale(1.05); }
 
-/* Effet CIBLE (Quand on vient d'un lien) */
+/* Effet CIBLE */
 :target { animation: highlight 2s ease-out; border: 2px solid var(--accent-color); scroll-margin-top: 120px; }
 @keyframes highlight { 0% { background-color: var(--accent-color); } 100% { background-color: transparent; } }
 
 /* === 6. FOOTER & MODALE === */
 footer { background: var(--dark-bg); color: var(--white); text-align: center; padding: 40px 0; }
+.social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: color 0.3s; }
+.social-links a:hover { color: var(--accent-color); }
+
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
 .modal-content { background-color: #fefefe; margin: 15% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; position: relative; }
 .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; right: 20px; top: 10px; }
 .contact-option { margin: 20px 0; padding: 15px; background: #f4f7f6; border-radius: 10px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 15px; text-decoration: none; color: var(--text-color); }
 .contact-option:hover { background: white; border: 1px solid var(--primary-color); transform: translateY(-2px); }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
-    nav { flex-direction: column; padding: 20px; }
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+    .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
+    .timeline-item.right { left: 0%; }
     .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .project-grid, .skills-grid { grid-template-columns: 1fr; }
 }

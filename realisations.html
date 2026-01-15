@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réalisations - Abdoul Aziz LO</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,7 +15,7 @@
                 <i class="fas fa-globe rotating-globe"></i>
                 <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de paiements</span>
                 </div>
             </a>
             
@@ -43,7 +44,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="realisations.html" class="dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
+                    <a href="realisations.html" class="active dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="realisations.html#real-iso"><i class="fas fa-rocket"></i> ISO 20022</a>
                         <a href="realisations.html#real-supervision"><i class="fas fa-chart-line"></i> Projet DDA</a>
@@ -77,7 +78,7 @@
                 <div class="proj-section">
                     <h4>2. Enjeux & Risques</h4>
                     <p><strong>Enjeu :</strong> Conformité réglementaire mondiale (CBPR+). <br>
-                    <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec.</p>
+                    <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec, avec impacts financiers et réputationnels désastreux.</p>
                 </div>
                 <div class="proj-section">
                     <h4>3. Ce que j'ai fait</h4>
@@ -165,8 +166,10 @@
     <footer>
         <p>&copy; 2025 Abdoul Aziz LO - Portfolio Expert ESIEA</p>
         <div class="social-links" style="margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/lo-abdoul-aziz/" target="_blank" style="color:white; margin:0 15px; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" onclick="document.getElementById('contactModal').style.display='block'" style="color:white; margin:0 15px; font-size:1.5rem;"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/lo-abdoul-aziz/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Ziza-LO" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Discord: ziza_lo"><i class="fab fa-discord"></i></a>
+            <a href="#" onclick="document.getElementById('contactModal').style.display='block'" title="Me Contacter"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
     
@@ -174,12 +177,9 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 style="color:var(--primary-color);">Me Contacter</h2>
-            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option">
-                <i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span>
-            </a>
-            <a href="tel:+33749411695" class="contact-option">
-                <i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span>
-            </a>
+            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option"><i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span></a>
+            <a href="tel:+33749411695" class="contact-option"><i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span></a>
+            <div class="contact-option" style="cursor: default;"><i class="fab fa-discord" style="color: #5865F2;"></i> <span class="contact-label">Discord : ziza_lo</span></div>
         </div>
     </div>
 
@@ -192,11 +192,7 @@
             const modal = document.getElementById("contactModal");
             const btn = document.getElementById("contactBtn");
             const span = document.getElementsByClassName("close-btn")[0];
-            if(btn) {
-                btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }
-                span.onclick = () => { modal.style.display = "none"; }
-                window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
-            }
+            if(btn) { btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }; span.onclick = () => { modal.style.display = "none"; }; window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }; }
         });
     </script>
 </body>

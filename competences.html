@@ -15,7 +15,7 @@
                 <i class="fas fa-globe rotating-globe"></i>
                 <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de paiements</span>
                 </div>
             </a>
             
@@ -24,7 +24,7 @@
                 <li><a href="parcours.html">Parcours</a></li>
                 
                 <li class="dropdown">
-                    <a href="competences.html" class="dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
+                    <a href="competences.html" class="active dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content mega-box">
                         <div class="mega-column">
                             <span class="column-title">Techniques</span>
@@ -60,7 +60,7 @@
     <section class="hero" id="hero-skills" style="height: 40vh;">
         <div class="hero-content">
             <h1>Mes Compétences</h1>
-            <p>Cliquez sur "Voir le détail" pour découvrir mon expertise complète.</p>
+            <p>Cliquez sur "Lire les détails" pour découvrir mon expertise complète.</p>
         </div>
     </section>
 
@@ -132,7 +132,7 @@
                     </ul>
                     <h4>Force & Recul (Autocritique)</h4>
                     <p>Une expérience courte mais fondamentale. Elle a transformé mes acquis théoriques de l'ESMT en expertise pratique de "terrain". Cette maîtrise de la couche physique me donne aujourd'hui une crédibilité technique précieuse pour dialoguer avec les équipes télécoms lors d'incidents d'infrastructure à la banque.</p>
-                    <a href="index.html#sonatel" class="btn-circular">
+                    <a href="parcours.html#sonatel" class="btn-circular">
                         <i class="fas fa-history"></i> Voir mon parcours Sonatel
                     </a>
                 </div>
@@ -249,8 +249,10 @@
     <footer>
         <p>&copy; 2025 Abdoul Aziz LO - Portfolio Expert ESIEA</p>
         <div class="social-links" style="margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/lo-abdoul-aziz/" target="_blank" style="color:white; margin:0 15px; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" onclick="document.getElementById('contactModal').style.display='block'" style="color:white; margin:0 15px; font-size:1.5rem;"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/lo-abdoul-aziz/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Ziza-LO" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Discord: ziza_lo"><i class="fab fa-discord"></i></a>
+            <a href="#" onclick="document.getElementById('contactModal').style.display='block'" title="Me Contacter"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
     
@@ -258,12 +260,9 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 style="color:var(--primary-color);">Me Contacter</h2>
-            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option">
-                <i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span>
-            </a>
-            <a href="tel:+33749411695" class="contact-option">
-                <i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span>
-            </a>
+            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option"><i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span></a>
+            <a href="tel:+33749411695" class="contact-option"><i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span></a>
+            <div class="contact-option" style="cursor: default;"><i class="fab fa-discord" style="color: #5865F2;"></i> <span class="contact-label">Discord : ziza_lo</span></div>
         </div>
     </div>
 
@@ -278,19 +277,12 @@
             const btn = document.getElementById("contactBtn");
             const span = document.getElementsByClassName("close-btn")[0];
 
-            if(btn) {
-                btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }
-                span.onclick = () => { modal.style.display = "none"; }
-                window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
-            }
+            if(btn) { btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }; span.onclick = () => { modal.style.display = "none"; }; window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }; }
 
             cards.forEach(card => {
                 const btn = card.querySelector('.read-more-btn');
                 const header = card.querySelector('.skill-header');
                 const toggleCard = () => {
-                    // Fermer les autres (optionnel)
-                    // cards.forEach(c => { if (c !== card) c.classList.remove('active'); });
-                    
                     card.classList.toggle('active');
                     if (card.classList.contains('active')) {
                         btn.innerHTML = 'Masquer les détails <i class="fas fa-chevron-up"></i>';

@@ -1,6 +1,8 @@
-/* style.css - VERSION UNIVERSELLE (Index + Compétences + Réalisations) */
+/* style.css - VERSION FINALE COMPLETE (V9) */
 
-/* === 1. VARIABLES & RESET === */
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
 :root {
     --primary-color: #005b96; /* Bleu Roi Ecobank */
     --secondary-color: #6497b1;
@@ -23,13 +25,15 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg);
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Évite le scroll horizontal sur mobile */
+    overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; margin: 0; }
 
-/* === 2. HEADER & NAVIGATION === */
+/* =========================================
+   2. HEADER & NAVIGATION (MEGA MENU)
+   ========================================= */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -103,43 +107,87 @@ nav {
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* Menu Déroulant (Dropdown) */
+/* --- DROPDOWN & MEGA MENU --- */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
+/* Conteneur de base du menu déroulant */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--white);
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 240px;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.15);
     z-index: 1000;
     border-radius: 8px;
     top: 100%;
-    left: -20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centre le menu */
+    padding: 10px 0;
+    border-top: 4px solid var(--accent-color);
 }
 
-.dropdown-content a {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f1f1f1;
+/* Style Spécifique Mega Menu (Large) */
+.dropdown-content.mega-box {
+    min-width: 550px;
+    display: none; /* Caché par défaut */
+    flex-direction: row; /* Colonnes côte à côte */
+    padding: 0;
+}
+
+/* Affichage au survol */
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-content.mega-box { display: flex; }
+
+/* Colonnes du Mega Menu */
+.mega-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.mega-column:first-child {
+    background-color: #f9fbfd;
+    border-right: 1px solid #eee;
+    border-radius: 0 0 0 8px;
+}
+
+/* Titres des colonnes */
+.column-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
     display: block;
-    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    width: fit-content;
+}
+
+/* Liens dans les menus */
+.dropdown-content a {
+    padding: 8px 12px;
+    display: block;
+    color: #444;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: 0.2s;
 }
 
 .dropdown-content a:hover {
-    background-color: #f9f9f9;
-    padding-left: 20px;
-    border-left: 4px solid var(--accent-color);
+    background-color: rgba(0, 91, 150, 0.08);
     color: var(--primary-color);
+    transform: translateX(5px);
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.dropdown-content a i {
+    width: 25px;
+    color: var(--secondary-color);
+    text-align: center;
 }
-
-.fa-caret-down { margin-left: 5px; font-size: 0.8rem; }
 
 /* Bouton Contact */
 .cta-btn {
@@ -156,7 +204,9 @@ nav {
     color: #333 !important;
 }
 
-/* === 3. HERO SECTION (Commune à toutes les pages) === */
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 .hero {
     height: 60vh;
     background-color: #1a1a1d; 
@@ -165,7 +215,7 @@ nav {
     justify-content: center;
     text-align: center;
     color: var(--white);
-    margin-top: 70px; /* Pour compenser le header fixe */
+    margin-top: 70px;
     position: relative;
     overflow: hidden;
 }
@@ -183,7 +233,9 @@ nav {
 .hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; }
 .hero-content p { font-size: 1.2rem; font-weight: 300; }
 
-/* === 4. MISE EN PAGE GÉNÉRALE === */
+/* =========================================
+   4. STRUCTURE GÉNÉRALE
+   ========================================= */
 .container { 
     max-width: 1100px; 
     margin: 0 auto; 
@@ -196,7 +248,7 @@ h2 {
     font-size: 2rem;
     margin-bottom: 40px;
     text-align: center; 
-    padding-top: 40px; /* Espace pour les ancres */
+    padding-top: 40px;
     position: relative;
     width: 100%;
 }
@@ -210,7 +262,6 @@ h2::after {
     margin: 15px auto; 
 }
 
-/* Boîte centrée (Bio) */
 .centered-box {
     text-align: center; 
     max-width: 900px; 
@@ -222,11 +273,12 @@ h2::after {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Valeurs (Icônes Bio) */
 .value-box { text-align: center; max-width: 200px; margin: 10px; }
 .value-box h3 { color: var(--primary-color); font-weight: 700; margin: 10px 0; }
 
-/* === 5. TIMELINE (Index.html - ARBRE PARCOURS) === */
+/* =========================================
+   5. TIMELINE (ARBRE PARCOURS)
+   ========================================= */
 .timeline {
     position: relative;
     max-width: 900px;
@@ -264,7 +316,7 @@ h2::after {
 }
 .timeline-item.right::after { left: -10px; }
 
-/* Flèche vers la ligne */
+/* Flèche */
 .timeline-item::before {
     content: " "; height: 0; position: absolute; top: 35px; width: 0; z-index: 1;
     right: 30px; border: medium solid white;
@@ -274,7 +326,7 @@ h2::after {
     left: 30px; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent;
 }
 
-/* Contenu de la Timeline */
+/* Contenu Timeline */
 .timeline-content {
     padding: 20px;
     background-color: var(--white);
@@ -284,12 +336,9 @@ h2::after {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.timeline-content:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
-}
+.timeline-content:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
 
-/* Header Timeline (Logo + Titre) */
+/* Header Timeline */
 .timeline-header-box {
     display: flex;
     align-items: center;
@@ -297,6 +346,7 @@ h2::after {
     margin-bottom: 10px;
 }
 
+/* Logo Cliquable */
 .logo-link {
     display: block;
     flex-shrink: 0;
@@ -311,19 +361,18 @@ h2::after {
 
 .timeline-title h3 { margin: 0; color: var(--primary-color); font-size: 1.1rem; }
 .timeline-title h4 { margin: 5px 0 0 0; font-size: 0.95rem; font-weight: 500; color: #555; }
-.timeline-title h4 strong { color: var(--primary-color); font-weight: 700; } 
+.timeline-title h4 strong { color: var(--primary-color); font-weight: 700; }
 
 .etablissement-link { text-decoration: none; color: inherit; transition: color 0.3s; }
 .etablissement-link:hover strong { color: var(--accent-color); text-decoration: underline; }
 
-/* Teaser (Résumé visible) */
+/* Teaser & Détails */
 .timeline-teaser {
     font-size: 0.95rem; color: #666; font-style: italic;
     margin-top: 5px; margin-bottom: 10px;
     border-left: 3px solid #eee; padding-left: 10px;
 }
 
-/* Accordéon Détails (Caché par défaut) */
 .timeline-details {
     max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; opacity: 0;
 }
@@ -336,8 +385,9 @@ h2::after {
 .timeline-details ul { padding-left: 20px; margin: 0; text-align: left; }
 .timeline-details li { margin-bottom: 5px; font-size: 0.9rem; }
 
-
-/* === 6. PAGE COMPÉTENCES (GRILLE & ACCORDÉON) === */
+/* =========================================
+   6. COMPÉTENCES & RÉALISATIONS
+   ========================================= */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -353,17 +403,11 @@ h2::after {
     transition: all 0.3s;
     cursor: pointer;
 }
-
-.skill-card:hover { 
-    transform: translateY(-5px); 
-    border-top-color: var(--accent-color); 
-    box-shadow: 0 15px 30px rgba(0, 91, 150, 0.15); 
-}
+.skill-card:hover { transform: translateY(-5px); border-top-color: var(--accent-color); box-shadow: 0 15px 30px rgba(0, 91, 150, 0.15); }
 
 .skill-header { display: flex; align-items: center; gap: 15px; color: var(--primary-color); margin-bottom: 15px; }
 .skill-summary p { font-size: 1rem; color: #555; margin-bottom: 15px; }
 
-/* Bouton "Lire les détails" */
 .read-more-btn {
     background: #f0f4f8; border: none; color: var(--primary-color);
     font-weight: 700; padding: 8px 15px; border-radius: 20px; cursor: pointer;
@@ -372,27 +416,19 @@ h2::after {
 }
 .read-more-btn:hover { background: var(--accent-color); color: #333; }
 
-/* Détails Compétences */
-.skill-details { 
-    display: none; 
-    margin-top: 20px; padding-top: 20px; 
-    border-top: 1px dashed #ddd; 
-    animation: fadeIn 0.5s ease; 
-}
-
+.skill-details { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ddd; animation: fadeIn 0.5s ease; }
 .skill-card.active .skill-details { display: block; }
 .skill-card.active { border-top-color: var(--accent-color); background-color: #fffdf5; }
 .skill-card.active .read-more-btn i { transform: rotate(180deg); }
 
 .skill-details h4 {
-    color: var(--primary-color); font-size: 1rem; margin-top: 20px; 
+    color: var(--primary-color); font-size: 1rem; margin-top: 20px;
     border-left: 3px solid var(--accent-color); padding-left: 10px;
 }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-
-/* === 7. PAGE RÉALISATIONS (BLOCS LARGES) === */
+/* Réalisations */
 .realisations-container { display: flex; flex-direction: column; gap: 60px; }
 
 .project-block {
@@ -403,37 +439,21 @@ h2::after {
     border-left: 6px solid var(--primary-color);
     transition: all 0.3s;
 }
-
-.project-block:hover { 
-    transform: translateY(-5px); 
-    border-left-color: var(--accent-color); 
-}
+.project-block:hover { transform: translateY(-5px); border-left-color: var(--accent-color); }
 
 .project-header { background: var(--primary-color); color: var(--white); padding: 20px 30px; }
 .project-header h3 { margin: 0; display: flex; align-items: center; gap: 10px; }
 .project-body { padding: 30px; }
 
-.proj-section h4 { 
-    color: var(--primary-color); 
-    border-bottom: 2px solid #eee; 
-    padding-bottom: 8px; margin-bottom: 12px; 
-}
-
-/* KPIs (Résultats) */
-.kpi-box { 
-    display: flex; gap: 20px; flex-wrap: wrap; 
-    background: #f0f4f8; padding: 20px; 
-    border-radius: 8px; margin-top: 10px;
-}
+.proj-section h4 { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 8px; margin-bottom: 12px; }
+.kpi-box { display: flex; gap: 20px; flex-wrap: wrap; background: #f0f4f8; padding: 20px; border-radius: 8px; margin-top: 10px;}
 .kpi-box span { font-weight: bold; color: var(--primary-color); }
 
-/* Pied de page projet & Tags */
 .project-footer { background: #f9f9f9; padding: 20px 30px; border-top: 1px solid #eee; }
 
-/* Liens Circulaires (Boutons et Tags) */
+/* Liens Circulaires */
 .btn-circular {
-    display: inline-flex; align-items: center; gap: 10px; 
-    margin-top: 20px; padding: 10px 20px;
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; padding: 10px 20px;
     background: var(--white); border: 1px solid var(--primary-color); color: var(--primary-color);
     border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
 }
@@ -446,65 +466,58 @@ h2::after {
 }
 .tag-link:hover { background: var(--primary-color); transform: scale(1.05); }
 
-/* Effet Target (Mise en évidence au clic d'un lien) */
+/* Effet Target (Flash Jaune) */
 :target { animation: highlight 2s ease-out; border: 2px solid var(--accent-color); scroll-margin-top: 120px; }
 @keyframes highlight { 0% { background-color: var(--accent-color); } 100% { background-color: transparent; } }
 
-
-/* === 8. FOOTER & MODALE DE CONTACT === */
-footer { 
-    background: var(--dark-bg); 
-    color: var(--white); 
-    text-align: center; 
-    padding: 40px 0; 
-    width: 100%; 
+/* =========================================
+   7. FOOTER & MODALE
+   ========================================= */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
     margin-top: 50px;
 }
 
 .social-links { margin-top: 20px; }
-.social-links a { 
-    color: var(--white) !important; 
-    font-size: 1.8rem; 
-    margin: 0 15px; 
-    transition: color 0.3s; 
-    display: inline-block; 
-}
+.social-links a { color: var(--white) !important; font-size: 1.8rem; margin: 0 15px; transition: color 0.3s; display: inline-block; }
 .social-links a:hover { color: var(--accent-color) !important; transform: scale(1.1); }
 
-/* Modale */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
 .modal-content { background-color: #fefefe; margin: 15% auto; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; position: relative; animation: slideDown 0.4s; }
 @keyframes slideDown { from {transform: translateY(-50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
 
 .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; right: 20px; top: 10px; }
-.close-btn:hover { color: var(--primary-color); }
-
-.contact-option { 
-    margin: 20px 0; padding: 15px; 
-    background: #f4f7f6; border-radius: 10px; 
-    transition: 0.3s; display: flex; align-items: center; justify-content: center; 
-    gap: 15px; text-decoration: none; color: var(--text-color); 
-}
+.contact-option { margin: 20px 0; padding: 15px; background: #f4f7f6; border-radius: 10px; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 15px; text-decoration: none; color: var(--text-color); }
 .contact-option:hover { background: white; border: 1px solid var(--primary-color); transform: translateY(-2px); }
 
-
-/* === 9. RESPONSIVE MOBILE === */
+/* =========================================
+   8. RESPONSIVE MOBILE
+   ========================================= */
 @media (max-width: 768px) {
-    /* Menu */
     nav { flex-direction: column; padding: 20px; }
     .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .dropdown-content { position: static; box-shadow: none; border-left: 2px solid var(--accent-color); margin-left: 10px; display: none; width: 100%;}
     
-    /* Timeline */
+    /* Adaptation Mega Menu sur Mobile */
+    .dropdown-content.mega-box {
+        flex-direction: column;
+        min-width: 100%;
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border-left: 2px solid var(--accent-color);
+    }
+    .mega-column:first-child { border-right: none; border-bottom: 1px solid #eee; }
+    
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
     .timeline-item::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
     .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
     .timeline-item.right { left: 0%; }
     
-    /* Grids */
     .project-grid, .skills-grid { grid-template-columns: 1fr; }
-    
-    /* Hero */
     .hero-content h1 { font-size: 1.8rem; }
 }

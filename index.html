@@ -13,22 +13,44 @@
         <nav>
             <a href="index.html" class="logo">
                 <i class="fas fa-globe rotating-globe"></i>
-                <div style="display: flex; flex-direction: column; margin-left: 10px; line-height: 1.1;">
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666; letter-spacing: 1px;">Ingénieur IT SWIFT & Moyens de Paiement</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de Paiement</span>
                 </div>
             </a>
             
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Accueil</a></li>
+                
                 <li class="dropdown">
                     <a href="competences.html" class="dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="competences.html#techniques">Techniques</a>
-                        <a href="competences.html#humaines">Humaines</a>
+                    <div class="dropdown-content mega-box">
+                        <div class="mega-column">
+                            <span class="column-title">Techniques</span>
+                            <a href="competences.html#comp-tech"><i class="fas fa-server"></i> Supervision SWIFT</a>
+                            <a href="competences.html#comp-archi"><i class="fas fa-project-diagram"></i> Architecture Hybride</a>
+                            <a href="competences.html#comp-reseau"><i class="fas fa-network-wired"></i> Ingénierie Réseaux</a>
+                        </div>
+                        <div class="mega-column">
+                            <span class="column-title">Humaines</span>
+                            <a href="competences.html#comp-federateur">Leadership Fédérateur</a>
+                            <a href="competences.html#comp-diplo">Diplomatie Technique</a>
+                            <a href="competences.html#comp-resilience">Résilience Ops</a>
+                            <a href="competences.html#comp-ethique">Éthique Bancaire</a>
+                            <a href="competences.html#comp-confid">Confidentialité</a>
+                        </div>
                     </div>
                 </li>
-                <li><a href="realisations.html">Réalisations</a></li>
+
+                <li class="dropdown">
+                    <a href="realisations.html" class="dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="realisations.html#real-iso"><i class="fas fa-rocket"></i> ISO 20022</a>
+                        <a href="realisations.html#real-supervision"><i class="fas fa-chart-line"></i> Projet DDA</a>
+                        <a href="realisations.html#real-transrep"><i class="fas fa-database"></i> TransRep</a>
+                    </div>
+                </li>
+
                 <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
@@ -348,10 +370,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Vanta Hero
             try {
                 VANTA.NET({
                   el: "#hero-anim",
@@ -361,7 +381,6 @@
                 });
             } catch (error) { console.log("Erreur Vanta: ", error); }
 
-            // Modale
             const modal = document.getElementById("contactModal");
             const btn = document.getElementById("contactBtn");
             const span = document.getElementsByClassName("close-btn")[0];
@@ -371,10 +390,8 @@
                 window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
             }
 
-            // Accordéon Timeline
             document.querySelectorAll('.timeline-content').forEach(item => {
                 item.addEventListener('click', (e) => {
-                    // Empêche le clic de fermer si on clique sur le lien externe ou le logo
                     if(e.target.closest('a')) return;
                     item.classList.toggle('active');
                 });

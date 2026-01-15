@@ -14,19 +14,42 @@
                 <i class="fas fa-globe rotating-globe"></i>
                 <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de Paiement</span>
                 </div>
             </a>
+            
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
+                
                 <li class="dropdown">
                     <a href="competences.html" class="dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="competences.html#techniques">Techniques</a>
-                        <a href="competences.html#humaines">Humaines</a>
+                    <div class="dropdown-content mega-box">
+                        <div class="mega-column">
+                            <span class="column-title">Techniques</span>
+                            <a href="competences.html#comp-tech"><i class="fas fa-server"></i> Supervision SWIFT</a>
+                            <a href="competences.html#comp-archi"><i class="fas fa-project-diagram"></i> Architecture Hybride</a>
+                            <a href="competences.html#comp-reseau"><i class="fas fa-network-wired"></i> Ingénierie Réseaux</a>
+                        </div>
+                        <div class="mega-column">
+                            <span class="column-title">Humaines</span>
+                            <a href="competences.html#comp-federateur">Leadership Fédérateur</a>
+                            <a href="competences.html#comp-diplo">Diplomatie Technique</a>
+                            <a href="competences.html#comp-resilience">Résilience Ops</a>
+                            <a href="competences.html#comp-ethique">Éthique Bancaire</a>
+                            <a href="competences.html#comp-confid">Confidentialité</a>
+                        </div>
                     </div>
                 </li>
-                <li><a href="realisations.html" class="active">Réalisations</a></li>
+
+                <li class="dropdown">
+                    <a href="realisations.html" class="active dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="realisations.html#real-iso"><i class="fas fa-rocket"></i> ISO 20022</a>
+                        <a href="realisations.html#real-supervision"><i class="fas fa-chart-line"></i> Projet DDA</a>
+                        <a href="realisations.html#real-transrep"><i class="fas fa-database"></i> TransRep</a>
+                    </div>
+                </li>
+
                 <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
@@ -53,7 +76,7 @@
                 <div class="proj-section">
                     <h4>2. Enjeux & Risques</h4>
                     <p><strong>Enjeu :</strong> Conformité réglementaire mondiale (CBPR+). <br>
-                    <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec, avec impacts financiers et réputationnels désastreux.</p>
+                    <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec.</p>
                 </div>
                 <div class="proj-section">
                     <h4>3. Ce que j'ai fait</h4>
@@ -138,7 +161,13 @@
 
     </section>
 
-    <footer><p>&copy; 2025 Abdoul Aziz LO</p></footer>
+    <footer>
+        <p>&copy; 2025 Abdoul Aziz LO - Portfolio Expert ESIEA</p>
+        <div class="social-links" style="margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/lo-abdoul-aziz/" target="_blank" style="color:white; margin:0 15px; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" onclick="document.getElementById('contactModal').style.display='block'" style="color:white; margin:0 15px; font-size:1.5rem;"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
     
     <div id="contactModal" class="modal">
         <div class="modal-content">

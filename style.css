@@ -1,4 +1,4 @@
-/* style.css - VERSION FINALE (HAMBURGER & RESPONSIVE) */
+/* style.css - VERSION FINALE V13 (HAMBURGER, PULSE & RADAR) */
 
 /* =========================================
    1. VARIABLES & RESET
@@ -26,7 +26,7 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; margin: 0; }
 
 /* =========================================
-   2. HEADER & NAVIGATION (MEGA MENU)
+   2. HEADER & NAVIGATION
    ========================================= */
 header {
     background-color: var(--white);
@@ -59,16 +59,11 @@ nav {
     background-color: var(--white); min-width: 240px;
     box-shadow: 0px 15px 30px rgba(0,0,0,0.15);
     z-index: 1000; border-radius: 8px;
-    top: 100%; left: 50%; transform: translateX(-50%); /* Centre le menu */
+    top: 100%; left: 50%; transform: translateX(-50%);
     padding: 10px 0; border-top: 4px solid var(--accent-color);
 }
 
-/* Style Mega Menu (Large) */
-.dropdown-content.mega-box {
-    min-width: 600px; display: none; flex-direction: row; padding: 0;
-}
-
-/* Affichage au survol */
+.dropdown-content.mega-box { min-width: 600px; display: none; flex-direction: row; padding: 0; }
 .dropdown:hover .dropdown-content { display: block; }
 .dropdown:hover .dropdown-content.mega-box { display: flex; }
 
@@ -85,8 +80,31 @@ nav {
 .dropdown-content a:hover { background-color: rgba(0, 91, 150, 0.08); color: var(--primary-color); transform: translateX(5px); }
 .dropdown-content a i { width: 25px; color: var(--secondary-color); text-align: center; margin-right: 5px; }
 
-.cta-btn { background-color: var(--primary-color); color: var(--white) !important; padding: 8px 20px !important; border-radius: 20px; transition: transform 0.3s; }
-.cta-btn:hover { transform: scale(1.05); background-color: var(--accent-color); color: #333 !important; }
+/* BOUTON D'ACTION (CV) AVEC ANIMATION PULSE */
+.cta-btn { 
+    background-color: var(--primary-color); 
+    color: var(--white) !important; 
+    padding: 12px 30px !important; 
+    border-radius: 30px; 
+    transition: transform 0.3s; 
+    position: relative;
+    overflow: hidden;
+    /* Animation Pulse : Battement de coeur */
+    animation: pulse-yellow 2s infinite;
+}
+.cta-btn:hover { 
+    transform: scale(1.05); 
+    background-color: var(--accent-color); 
+    color: #333 !important; 
+    animation: none; /* Arrêt de l'animation au survol */
+}
+
+/* Keyframes pour l'effet Pulse */
+@keyframes pulse-yellow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 202, 40, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 202, 40, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 202, 40, 0); }
+}
 
 /* =========================================
    3. HERO & PROFIL (ACCUEIL)
@@ -105,32 +123,55 @@ nav {
     max-width: 1200px; width: 100%;
 }
 
-/* Photo de Profil */
+/* --- PHOTO DE PROFIL & ANNEAU RADAR --- */
 .profile-img-container {
     width: 350px; 
     height: 350px; 
     flex-shrink: 0;
     border-radius: 50%; 
-    /* On ajoute un peu d'espace (padding) blanc entre la bordure et la photo */
-    padding: 10px; 
-    background: rgba(255, 255, 255, 0.1); /* Fond léger */
-    border: 2px solid var(--accent-color); /* Cercle fin jaune autour */
-    box-shadow: 0 0 50px rgba(0, 91, 150, 0.5); /* Lueur bleue */
-    animation: float 6s ease-in-out infinite;
-    overflow: hidden; /* Important pour que l'image ne dépasse pas */
+    padding: 8px; /* Espace pour l'anneau */
+    background: #1a1a1d; 
     position: relative;
+    box-shadow: 0 0 60px rgba(0, 91, 150, 0.6); 
+    animation: float 6s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* L'anneau tournant (Conic Gradient) */
+.profile-img-container::before {
+    content: '';
+    position: absolute;
+    inset: -3px; 
+    border-radius: 50%;
+    padding: 4px; 
+    background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 20%, transparent 40%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: spin-ring 4s linear infinite;
 }
 
 .profile-img {
     width: 100%; 
     height: 100%; 
-    object-fit: cover; /* Remplit le cercle sans déformer */
+    object-fit: cover; 
     border-radius: 50%;
     
-    /* ASTUCE CADRAGE */
-    object-position: center 15%; 
+    /* CADRAGE SPÉCIAL : Pour voir le nœud papillon */
+    /* On centre horizontalement et on descend à 35% verticalement */
+    object-position: center 35%; 
     
-    border: 5px solid #1a1a1d; /* Bordure sombre collée à l'image */
+    border: 4px solid #1a1a1d; /* Bordure interne */
+    z-index: 2;
+}
+
+@keyframes spin-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
@@ -142,7 +183,7 @@ nav {
 .hero-text p { font-size: 1.15rem; margin-bottom: 35px; opacity: 0.9; line-height: 1.8; font-weight: 300; }
 
 .btn-group { display: flex; gap: 20px; }
-.btn-outline { background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color) !important; padding: 10px 25px !important; border-radius: 30px; transition: 0.3s; text-decoration: none; font-weight: 600; }
+.btn-outline { background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color) !important; padding: 10px 25px !important; border-radius: 30px; transition: 0.3s; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px;}
 .btn-outline:hover { background: var(--accent-color); color: #1a1a1d !important; box-shadow: 0 0 15px rgba(255, 202, 40, 0.4); }
 
 /* Hero Simple (Pour autres pages) */

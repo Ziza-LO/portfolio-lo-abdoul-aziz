@@ -15,7 +15,7 @@
                 <i class="fas fa-globe rotating-globe"></i>
                 <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span class="logo-subtitle">Ingénieur IT SWIFT & Moyens de paiements</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de paiements</span>
                 </div>
             </a>
 
@@ -59,7 +59,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="realisations.html" class="dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
+                    <a href="realisations.html" class="active dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="realisations.html#real-iso"><i class="fas fa-rocket"></i> ISO 20022</a>
                         <a href="realisations.html#real-supervision"><i class="fas fa-chart-line"></i> Projet DDA</a>
@@ -230,18 +230,13 @@
             const modal = document.getElementById("contactModal");
             const btn = document.getElementById("contactBtn");
             const span = document.getElementsByClassName("close-btn")[0];
+            const menuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
             if(btn) { btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }; span.onclick = () => { modal.style.display = "none"; }; window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }; }
+            
+            menuBtn.addEventListener('click', () => { navLinks.classList.toggle('mobile-menu-active'); });
         });
     </script>
-
-    <script>
-        const menuBtn = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-menu-active');
-        });
-    </script>
-    
 </body>
 </html>

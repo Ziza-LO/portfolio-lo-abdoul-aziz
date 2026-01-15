@@ -1,4 +1,4 @@
-/* style.css - VERSION FINALE V12 (COMPLETE & CORRIGÉE) */
+/* style.css - VERSION FINALE (HAMBURGER & RESPONSIVE) */
 
 /* =========================================
    1. VARIABLES & RESET
@@ -107,18 +107,30 @@ nav {
 
 /* Photo de Profil */
 .profile-img-container {
-    width: 350px; height: 350px; flex-shrink: 0;
-    border-radius: 50%; padding: 6px;
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    box-shadow: 0 0 40px rgba(0, 91, 150, 0.6);
+    width: 350px; 
+    height: 350px; 
+    flex-shrink: 0;
+    border-radius: 50%; 
+    /* On ajoute un peu d'espace (padding) blanc entre la bordure et la photo */
+    padding: 10px; 
+    background: rgba(255, 255, 255, 0.1); /* Fond léger */
+    border: 2px solid var(--accent-color); /* Cercle fin jaune autour */
+    box-shadow: 0 0 50px rgba(0, 91, 150, 0.5); /* Lueur bleue */
     animation: float 6s ease-in-out infinite;
+    overflow: hidden; /* Important pour que l'image ne dépasse pas */
     position: relative;
 }
 
 .profile-img {
-    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
-    border: 6px solid #1a1a1d; 
-    background-color: #ddd; /* Couleur de fond si l'image charge mal */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Remplit le cercle sans déformer */
+    border-radius: 50%;
+    
+    /* ASTUCE CADRAGE */
+    object-position: center 15%; 
+    
+    border: 5px solid #1a1a1d; /* Bordure sombre collée à l'image */
 }
 
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }

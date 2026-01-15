@@ -123,7 +123,7 @@ nav {
     max-width: 1200px; width: 100%;
 }
 
-/* --- PHOTO DE PROFIL & ANNEAU RADAR (V14 : TURBO & GLOW MAX) --- */
+/* --- PHOTO DE PROFIL & ANNEAU RADAR (V15 : TRAIT FIN & CADRAGE VISAGE) --- */
 
 .profile-img-container {
     width: 350px; 
@@ -131,51 +131,46 @@ nav {
     flex-shrink: 0;
     border-radius: 50%; 
     
-    /* 1. ÉQUILIBRE CERCLE NOIR / ZOOM */
-    /* On réduit un peu l'épaisseur du noir (de 25px à 20px) pour que ce soit moins lourd */
-    padding: 20px; 
+    /* 1. TRAIT NOIR FIN : On réduit l'espace au minimum */
+    padding: 6px; 
     
     background: #1a1a1d; 
     position: relative;
-    box-shadow: 0 0 80px rgba(0, 91, 150, 0.7); 
+    box-shadow: 0 0 90px rgba(0, 91, 150, 0.8); /* Ombre globale plus forte */
     animation: float 6s ease-in-out infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transition: all 0.5s ease; /* Transition fluide */
+    transition: all 0.5s ease;
 }
 
-/* L'anneau tournant */
+/* L'anneau tournant (Radar) */
 .profile-img-container::before {
     content: '';
     position: absolute;
-    inset: -5px; 
+    inset: -4px; /* Anneau fin */
     border-radius: 50%;
-    padding: 5px; 
+    padding: 4px; 
     
-    /* Dégradé encore plus lumineux (Jaune -> Blanc Pur -> Transparent) */
-    background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 25%, #ffffff 50%, transparent 55%);
+    /* Dégradé : Jaune -> Blanc éclatant -> Transparent */
+    background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 20%, #ffffff 50%, transparent 60%);
     
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     
-    /* 2. BRILLANCE AUGMENTÉE (GLOW) */
-    /* On augmente le rayon de 10px à 20px pour que ça "bave" plus de lumière */
-    filter: drop-shadow(0 0 20px var(--accent-color));
+    /* 2. BRILLANCE MAXIMALE */
+    filter: drop-shadow(0 0 25px var(--accent-color));
     
-    /* Vitesse normale : 3 secondes */
     animation: spin-ring 3s linear infinite; 
 }
 
-/* 3. EFFET TURBO AU SURVOL DE LA SOURIS */
+/* Accélération au survol */
 .profile-img-container:hover::before {
-    /* On accélère la rotation (1s pour faire un tour) */
-    animation-duration: 0.8s; 
-    /* On augmente encore la lumière au survol */
-    filter: drop-shadow(0 0 30px var(--accent-color));
+    animation-duration: 0.5s; /* Très rapide (Turbine) */
+    filter: drop-shadow(0 0 40px var(--accent-color)); /* Super Glow */
 }
 
 .profile-img {
@@ -184,11 +179,11 @@ nav {
     object-fit: cover; 
     border-radius: 50%;
     
-    /* 4. CADRAGE OPTIMISÉ (NŒUD PAPILLON) */
-    /* On descend encore un peu (70%) pour bien voir le nœud */
-    object-position: center 70%; 
+    /* 3. CADRAGE PARFAIT (FRONT + NŒUD) */
+    /* 35% = On vise le haut du visage pour ne pas couper le front */
+    /* Comme la photo remplit tout le cercle (trait fin), on verra aussi le bas */
+    object-position: center 35%; 
     
-    /* On retire la bordure grise pour épurer le "cercle noir" */
     border: none; 
     z-index: 2;
 }

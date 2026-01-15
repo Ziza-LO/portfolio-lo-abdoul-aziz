@@ -21,7 +21,6 @@
             
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Accueil</a></li>
-                
                 <li class="dropdown">
                     <a href="competences.html" class="dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
@@ -29,7 +28,6 @@
                         <a href="competences.html#humaines">Humaines</a>
                     </div>
                 </li>
-
                 <li><a href="realisations.html">Réalisations</a></li>
                 <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
@@ -185,7 +183,7 @@
             </div>
 
             <div class="timeline-item left">
-                <div class="timeline-content">
+                <div class="timeline-content" id="sonatel">
                     <div class="timeline-header-box">
                         <a href="https://sonatel.sn" target="_blank" class="logo-link">
                             <img src="logo-sonatel.png" alt="Sonatel" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=SONA'">
@@ -244,7 +242,7 @@
                         </div>
                         <i class="fas fa-chevron-down toggle-icon"></i>
                     </div>
-                    <p class="timeline-teaser">Expertise en ingénierie télécoms, transmission et accès large bande.</p>
+                    <p class="timeline-teaser">Expertise en ingénierie des réseaux mobiles, technologies de transmission (SDH/PDH) et accès large bande.</p>
                     <div class="timeline-details">
                         <ul>
                             <li><strong>Transmission & Transport :</strong> Maîtrise des hiérarchies numériques plésiochrones et synchrones (<strong>PDH / SDH</strong>), Faisceaux Hertziens et Fibre Optique.</li>
@@ -376,7 +374,7 @@
             // Accordéon Timeline
             document.querySelectorAll('.timeline-content').forEach(item => {
                 item.addEventListener('click', (e) => {
-                    // Si on clique sur le lien ou le logo, on ne bascule pas l'accordéon
+                    // Empêche le clic de fermer si on clique sur le lien externe ou le logo
                     if(e.target.closest('a')) return;
                     item.classList.toggle('active');
                 });

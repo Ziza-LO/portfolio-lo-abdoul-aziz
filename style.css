@@ -122,61 +122,89 @@ nav {
     display: flex; align-items: center; justify-content: center; gap: 80px;
     max-width: 1200px; width: 100%;
 }
-/* --- PHOTO DE PROFIL & ANNEAU RADAR (V16 : PARFAIT POUR PORTRAIT) --- */
+/* --- PHOTO DE PROFIL & ANNEAU RADAR (V16 : CADRAGE OPTIMISÉ VISAGE + BUSTE) --- */
 
 .profile-img-container {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    padding: 6px;
-
-    background: #1a1a1d;
+    width: 350px; 
+    height: 350px; 
+    flex-shrink: 0;
+    border-radius: 50%; 
+    
+    /* TRAIT NOIR FIN */
+    padding: 6px; 
+    
+    background: #1a1a1d; 
     position: relative;
-    box-shadow: 0 0 90px rgba(0, 91, 150, 0.8);
+    box-shadow: 0 0 90px rgba(0, 91, 150, 0.8); /* Ombre globale plus forte */
     animation: float 6s ease-in-out infinite;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+    transition: all 0.5s ease;
 }
 
-/* Anneau radar */
+/* L'anneau tournant (Radar) */
 .profile-img-container::before {
     content: '';
     position: absolute;
-    inset: -4px;
+    inset: -4px; /* Anneau fin */
     border-radius: 50%;
-    padding: 4px;
-
-    background: conic-gradient(
-        from 0deg,
-        transparent 0%,
-        var(--accent-color) 20%,
-        #ffffff 50%,
-        transparent 60%
-    );
-
+    padding: 4px; 
+    
+    /* Dégradé : Jaune -> Blanc éclatant -> Transparent */
+    background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 20%, #ffffff 50%, transparent 60%);
+    
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
+    
+    /* BRILLANCE MAXIMALE */
     filter: drop-shadow(0 0 25px var(--accent-color));
-    animation: spin-ring 3s linear infinite;
+    
+    animation: spin-ring 3s linear infinite; 
 }
 
-/* Image */
+/* Accélération au survol */
+.profile-img-container:hover::before {
+    animation-duration: 0.5s; /* Très rapide (Turbine) */
+    filter: drop-shadow(0 0 40px var(--accent-color)); /* Super Glow */
+}
+
 .profile-img {
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
     border-radius: 50%;
-    object-fit: cover;
-
-    /* 🔥 LE POINT CLÉ */
-    object-position: center 42%;
-
+    
+    /* ✅ NOUVEAU CADRAGE : Dézoomé pour voir front + nœud + buste */
+    object-position: center 20%; 
+    
+    border: none; 
     z-index: 2;
 }
+
+/* Animation float (si pas déjà définie ailleurs) */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Animation rotation anneau (si pas déjà définie ailleurs) */
+@keyframes spin-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 
 @keyframes spin-ring {

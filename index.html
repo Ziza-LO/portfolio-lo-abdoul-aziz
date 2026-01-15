@@ -15,24 +15,20 @@
                 <i class="fas fa-globe rotating-globe"></i>
                 <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de Paiement</span>
+                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT</span>
                 </div>
             </a>
-            
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                
-                <li class="dropdown">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="parcours.html">Parcours</a></li> <li class="dropdown">
                     <a href="competences.html" class="dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content mega-box">
-                        
                         <div class="mega-column">
                             <span class="column-title">Techniques</span>
                             <a href="competences.html#comp-tech"><i class="fas fa-server"></i> Supervision SWIFT</a>
                             <a href="competences.html#comp-archi"><i class="fas fa-project-diagram"></i> Architecture Hybride</a>
                             <a href="competences.html#comp-reseau"><i class="fas fa-network-wired"></i> Ingénierie Réseaux</a>
                         </div>
-
                         <div class="mega-column">
                             <span class="column-title">Humaines</span>
                             <a href="competences.html#comp-federateur"><i class="fas fa-users-cog"></i> Leadership Fédérateur</a>
@@ -43,7 +39,6 @@
                         </div>
                     </div>
                 </li>
-
                 <li class="dropdown">
                     <a href="realisations.html" class="dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
@@ -52,300 +47,51 @@
                         <a href="realisations.html#real-transrep"><i class="fas fa-database"></i> TransRep</a>
                     </div>
                 </li>
-
                 <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero" id="hero-anim">
-        <div class="hero-content">
-            <h1>Inspirer. Connecter. Transformer.</h1>
-            <p>Expertise SWIFT & Innovation Financière</p>
-            <p style="font-size: 1.1rem; font-style: italic; margin-top:10px;">"Bâtir les ponts entre la rigueur bancaire et l'impact social de la Blockchain."</p>
-            <a href="#about" class="cta-btn" style="background: var(--accent-color); color: #333 !important; margin-top: 20px;">Découvrir mon profil</a>
-        </div>
-    </section>
-
-    <section id="about" class="container">
-        <h2>Mon ADN & Ma Vision</h2>
-        <div class="centered-box">
-            <p style="font-size: 1.1rem; margin-bottom: 20px;">
-                <strong>Rêveur pragmatique et ingénieur engagé.</strong><br> 
-                Mon moteur est l'alliance entre l'excellence technique des systèmes critiques (SWIFT, ISO 20022) et une ambition humaine forte : l'inclusion financière en Afrique de l'Ouest.
-            </p>
-            <p>
-                Mes valeurs fondamentales — <strong>Loyauté, Authenticité et Bienveillance</strong> — guident mon projet professionnel.
-            </p>
-            <p style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px; font-style: italic;">
-                <strong>Ce qui m'anime (Passions & Intérêts) :</strong><br>
-                Au-delà de l'expertise technique, je suis un passionné de <strong>football</strong> (esprit d'équipe) et un grand amateur de <strong>voyages</strong> (curiosité et adaptation), des qualités essentielles pour évoluer dans un groupe panafricain comme Ecobank.
-            </p>
+    <section class="hero-profile" id="hero-anim">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Abdoul Aziz LO</h1>
+                <h2>Ingénieur IT SWIFT & Architecte Cloud</h2>
+                <p><strong>"Bâtir les ponts entre la rigueur bancaire et l'impact social de la Blockchain."</strong><br><br>
+                Passionné par l'ingénierie des systèmes complexes, je combine une expertise terrain en télécoms avec une rigueur acquise au sein de grandes institutions financières. Mon objectif : Sécuriser et optimiser les flux qui font tourner l'économie.</p>
+                
+                <div class="btn-group">
+                    <a href="competences.html" class="cta-btn">Mes Compétences</a>
+                    <a href="parcours.html" class="btn-outline">Mon Parcours</a>
+                </div>
+            </div>
             
-            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
-                <div class="value-box">
-                    <i class="fas fa-users fa-2x" style="color: var(--primary-color);"></i>
-                    <h3 style="margin: 10px 0; font-size: 1.2rem;">Fédérateur</h3>
-                </div>
-                <div class="value-box">
-                    <i class="fas fa-brain fa-2x" style="color: var(--primary-color);"></i>
-                    <h3 style="margin: 10px 0; font-size: 1.2rem;">Résilient</h3>
-                </div>
-                <div class="value-box">
-                    <i class="fas fa-globe-africa fa-2x" style="color: var(--primary-color);"></i>
-                    <h3 style="margin: 10px 0; font-size: 1.2rem;">Visionnaire</h3>
-                </div>
+            <div class="profile-img-container">
+                <img src="mon-profil.jpg" alt="Abdoul Aziz LO" class="profile-img" onerror="this.src='https://via.placeholder.com/300?text=Ma+Photo'">
             </div>
         </div>
     </section>
 
-    <section class="container" style="background-color: #eef2f5; width: 100%; max-width: 100%;">
-        <h2 style="margin-bottom: 50px;">Mon Parcours</h2>
+    <section class="container">
+        <h2>Ce que vous découvrirez ici</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">Un aperçu structuré de mon expertise, de mes expériences terrain et des projets majeurs que j'ai pilotés.</p>
         
-        <div style="text-align:center; margin-bottom:30px; font-size: 0.9rem;">
-            <span style="margin-right: 20px;"><i class="fas fa-briefcase" style="color:var(--primary-color)"></i> <strong>Gauche :</strong> Expériences Pro</span>
-            <span><i class="fas fa-graduation-cap" style="color:var(--primary-color)"></i> <strong>Droite :</strong> Formation</span>
-        </div>
-
-        <div class="timeline">
-            
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="https://www.ecobank.com" target="_blank" class="logo-link">
-                            <img src="logo-ecobank.png" alt="Ecobank" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=ECO'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>Fév. 2024 - Aujourd'hui</h3>
-                            <h4>Apprenti Ingénieur SWIFT chez <a href="https://www.ecobank.com" target="_blank" class="etablissement-link"><strong>Ecobank</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Administration critique des flux financiers et pilotage de la migration ISO 20022.</p>
-                    <div class="timeline-details">
-                        <p><strong>Missions Principales :</strong></p>
-                        <ul>
-                            <li><strong>Projet Stratégique ISO 20022 :</strong> Participation active à la migration des messages MT vers MX (CBPR+). Tests de conformité et validation des flux avec les partenaires.</li>
-                            <li><strong>Administration SWIFT :</strong> Gestion quotidienne de l'infrastructure SAA (Swift Alliance Access) et SAG (Swift Alliance Gateway).</li>
-                            <li><strong>Sécurité & Compliance :</strong> Administration des outils de filtrage <strong>SIRON</strong> (Embargo, AML, KYC). Gestion des droits d'accès (LAU/RMA) et investigations sur les alertes de sécurité.</li>
-                            <li><strong>Supervision (Monitoring) :</strong> Mise en place de KPI pour le suivi des flux transactionnels. Résolution proactive des incidents de routage.</li>
-                            <li><strong>Projets Transverses :</strong> Modernisation de l'archivage (Projet TransRep) et mise en place de la détection de doublons (Projet DDA).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="https://www.esiea.fr" target="_blank" class="logo-link">
-                            <img src="logo-esiea.png" alt="ESIEA" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=ESIEA'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>2023 - 2026</h3>
-                            <h4>Master Architecte Cloud à <a href="https://www.esiea.fr" target="_blank" class="etablissement-link"><strong>ESIEA</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Formation d'excellence en ingénierie des systèmes complexes et cybersécurité.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Architecture Cloud :</strong> Conception d'infrastructures résilientes (AWS, Azure), déploiement automatisé (Terraform, Ansible).</li>
-                            <li><strong>DevSecOps :</strong> Intégration de la sécurité dans le cycle CI/CD. Docker, Kubernetes.</li>
-                            <li><strong>Blockchain :</strong> Étude des protocoles décentralisés et Smart Contracts (Solidity).</li>
-                            <li><strong>Réseaux Avancés :</strong> Routage dynamique (OSPF, BGP), SDN et sécurité périmétrique.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="https://www.ecobank.com" target="_blank" class="logo-link">
-                            <img src="logo-ecobank.png" alt="Ecobank" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=ECO'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>Août 2023 - Fév. 2024</h3>
-                            <h4>Stage IT SWIFT chez <a href="https://www.ecobank.com" target="_blank" class="etablissement-link"><strong>Ecobank</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Immersion au cœur du Hub technologique bancaire : Support et Cybersécurité.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Support Niveau 1/2 :</strong> Assistance aux utilisateurs des filiales sur les problématiques SWIFTNet.</li>
-                            <li><strong>Monitoring des Flux :</strong> Surveillance des messages (MT103, MT202, PACS) et gestion des files d'attente.</li>
-                            <li><strong>Projet SIEM :</strong> Étude et définition d'une solution de supervision des événements de sécurité (SIEM) pour renforcer la détection des menaces.</li>
-                            <li><strong>Cartographie :</strong> Modélisation de l'architecture de supervision existante et proposition d'améliorations.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="https://www.esiea.fr" target="_blank" class="logo-link">
-                            <img src="logo-esiea.png" alt="ESIEA" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=ESIEA'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>2022 - 2023</h3>
-                            <h4>Bachelor SI à <a href="https://www.esiea.fr" target="_blank" class="etablissement-link"><strong>ESIEA</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Consolidation des fondamentaux en administration système et réseaux.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Administration Système :</strong> Linux (RedHat/Debian), Windows Server (AD, DNS, DHCP).</li>
-                            <li><strong>Virtualisation :</strong> VMware, Hyper-V. Gestion des ressources serveurs.</li>
-                            <li><strong>Projets :</strong> Mise en place d'une architecture sécurisée et détection d'intrusion (IDS/IPS).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-content" id="sonatel">
-                    <div class="timeline-header-box">
-                        <a href="https://sonatel.sn" target="_blank" class="logo-link">
-                            <img src="logo-sonatel.png" alt="Sonatel" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=SONA'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>Juin 2022 - Oct. 2022</h3>
-                            <h4>Technicien Supérieur FTTH chez <a href="https://sonatel.sn" target="_blank" class="etablissement-link"><strong>Sonatel</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Supervision du déploiement de la Fibre Optique (FTTH/FTTO) au Sénégal.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Contrôle Qualité :</strong> Réception technique des travaux de déploiement fibre optique réalisés par les sous-traitants.</li>
-                            <li><strong>Mesures Techniques :</strong> Utilisation de réflectomètres (OTDR) pour vérifier l'intégrité des liaisons et la puissance du signal (Pwr Meter).</li>
-                            <li><strong>Suivi de Projet :</strong> Analyse des cahiers des charges, relevé des réserves et validation des plans de recollement.</li>
-                            <li><strong>Reporting :</strong> Rédaction des rapports de recette et mise à jour du SIG (Système d'Information Géographique).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="#" class="logo-link">
-                            <img src="logo-emc2.png" alt="EmC2" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=EmC2'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>Fév. 2022 - Juin 2022</h3>
-                            <h4>Stage IoT chez <a href="#" class="etablissement-link"><strong>EmC2 Group</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Conception d'un système de barrière intelligente autonome.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Prototypage :</strong> Développement d'une solution de détection d'intrusion sur autoroute basée sur des microcontrôleurs <strong>Arduino</strong>.</li>
-                            <li><strong>Électronique :</strong> Intégration de capteurs (Ultrasons, Infrarouge), gestion de l'alimentation solaire autonome.</li>
-                            <li><strong>Développement :</strong> Programmation en C++ (Arduino) et Python pour la logique de contrôle.</li>
-                            <li><strong>Web :</strong> Création d'une interface de supervision simple pour remonter les alertes en temps réel.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="http://www.esmt.sn" target="_blank" class="logo-link">
-                            <img src="logo-esmt.png" alt="ESMT" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=ESMT'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>2020 - 2021</h3>
-                            <h4>Licence Pro Réseaux & Services à <a href="http://www.esmt.sn" target="_blank" class="etablissement-link"><strong>ESMT</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Expertise en ingénierie des réseaux mobiles, technologies de transmission (SDH/PDH) et accès large bande.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Transmission & Transport :</strong> Maîtrise des hiérarchies numériques plésiochrones et synchrones (<strong>PDH / SDH</strong>), Faisceaux Hertziens et Fibre Optique.</li>
-                            <li><strong>Technologies d'Accès :</strong> Déploiement et architecture des réseaux d'accès large bande (Boucle locale cuivre <strong>xDSL</strong>, FTTx).</li>
-                            <li><strong>Réseaux Mobiles :</strong> Architecture et planification des réseaux cellulaires (GSM, 3G, LTE).</li>
-                            <li><strong>Réseaux & Services IP :</strong> Interconnexion (Cisco CCNA), Téléphonie sur IP (VoIP Asterisk) et administration de services Linux.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="https://www.ics.sn" target="_blank" class="logo-link">
-                            <img src="logo-ics.png" alt="ICS" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=ICS'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>Mars 2020 - Avril 2020</h3>
-                            <h4>Technicien Instrumentiste chez <a href="https://www.ics.sn" target="_blank" class="etablissement-link"><strong>ICS Indorama</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Maintenance industrielle en environnement critique (Industries Chimiques du Sénégal).</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Maintenance Régulation :</strong> Calibration et réparation des capteurs de pression, température et débit sur site industriel.</li>
-                            <li><strong>Actionneurs :</strong> Maintenance des vannes automatiques et positionneurs pneumatiques.</li>
-                            <li><strong>Électronique de Puissance :</strong> Configuration et dépannage des variateurs de vitesse et convertisseurs de courant.</li>
-                            <li><strong>Communication :</strong> Gestion du parc de radiocommunication (Talkie-Walkie, Relais Radio) pour la coordination des équipes terrain.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="#" class="logo-link">
-                            <img src="logo-cedt.png" alt="CEDT" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=CEDT'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>2016 - 2018</h3>
-                            <h4>BTS Électronique Industrielle au <a href="#" class="etablissement-link"><strong>CEDT Le G15</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Bases solides en électronique, automatisme et maintenance.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li><strong>Automatisme :</strong> Programmation d'automates programmables industriels (API) et logique séquentielle (GRAFCET).</li>
-                            <li><strong>Électronique :</strong> Conception, soudure et réparation de cartes électroniques (Analogique/Numérique).</li>
-                            <li><strong>Énergie :</strong> Dimensionnement d'installations photovoltaïques et systèmes de secours.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item right">
-                <div class="timeline-content">
-                    <div class="timeline-header-box">
-                        <a href="#" class="logo-link">
-                            <img src="logo-delafosse.png" alt="Lycée" class="mini-logo" onerror="this.src='https://via.placeholder.com/50?text=BAC'">
-                        </a>
-                        <div class="timeline-title">
-                            <h3>2013 - 2016</h3>
-                            <h4>Baccalauréat Technique T2 au <a href="#" class="etablissement-link"><strong>Lycée Delafosse</strong></a></h4>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <p class="timeline-teaser">Mention Bien - Spécialité Électronique et Électricité.</p>
-                    <div class="timeline-details">
-                        <ul>
-                            <li>Excellence académique dans les matières techniques, physiques et mathématiques.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+        <div class="summary-grid">
+            <a href="parcours.html" class="summary-card" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-road summary-icon"></i>
+                <h3>Mon Parcours</h3>
+                <p>De l'ESMT à Ecobank, découvrez mon évolution académique et professionnelle.</p>
+            </a>
+            <a href="competences.html" class="summary-card" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-tools summary-icon"></i>
+                <h3>Mes Compétences</h3>
+                <p>Une double expertise : Technique (SWIFT, Cloud) et Humaine (Leadership, Éthique).</p>
+            </a>
+            <a href="realisations.html" class="summary-card" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-trophy summary-icon"></i>
+                <h3>Mes Réalisations</h3>
+                <p>Analyses de projets concrets (ISO 20022, DDA) et de ma valeur ajoutée.</p>
+            </a>
         </div>
     </section>
 
@@ -361,12 +107,8 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 style="color:var(--primary-color);">Me Contacter</h2>
-            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option">
-                <i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span>
-            </a>
-            <a href="tel:+33749411695" class="contact-option">
-                <i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span>
-            </a>
+            <a href="mailto:ablo@et.intechinfo.fr" class="contact-option"><i class="fas fa-envelope-open-text"></i> <span class="contact-label">ablo@et.intechinfo.fr</span></a>
+            <a href="tel:+33749411695" class="contact-option"><i class="fas fa-mobile-alt"></i> <span class="contact-label">07 49 41 16 95</span></a>
         </div>
     </div>
 
@@ -374,30 +116,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            try {
-                VANTA.NET({
-                  el: "#hero-anim",
-                  mouseControls: true, touchControls: true, gyroControls: false,
-                  minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
-                  color: 0xffca28, backgroundColor: 0x005b96, points: 12.00, maxDistance: 22.00, spacing: 18.00
-                });
-            } catch (error) { console.log("Erreur Vanta: ", error); }
-
+            try { VANTA.NET({ el: "#hero-anim", mouseControls: true, touchControls: true, gyroControls: false, minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00, color: 0xffca28, backgroundColor: 0x005b96, points: 12.00, maxDistance: 22.00, spacing: 18.00 }); } catch (error) { console.log("Erreur Vanta"); }
+            
             const modal = document.getElementById("contactModal");
             const btn = document.getElementById("contactBtn");
             const span = document.getElementsByClassName("close-btn")[0];
-            if(btn) {
-                btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }
-                span.onclick = () => { modal.style.display = "none"; }
-                window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
-            }
-
-            document.querySelectorAll('.timeline-content').forEach(item => {
-                item.addEventListener('click', (e) => {
-                    if(e.target.closest('a')) return;
-                    item.classList.toggle('active');
-                });
-            });
+            if(btn) { btn.onclick = (e) => { e.preventDefault(); modal.style.display = "block"; }; span.onclick = () => { modal.style.display = "none"; }; window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }; }
         });
     </script>
 </body>

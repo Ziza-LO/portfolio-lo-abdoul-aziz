@@ -123,16 +123,21 @@ nav {
     max-width: 1200px; width: 100%;
 }
 
-/* --- PHOTO DE PROFIL & ANNEAU RADAR --- */
+/* --- PHOTO DE PROFIL & ANNEAU RADAR (V3 : GLOW & DÉ-ZOOM) --- */
+
 .profile-img-container {
     width: 350px; 
     height: 350px; 
     flex-shrink: 0;
     border-radius: 50%; 
-    padding: 8px; /* Espace pour l'anneau */
+    
+    /* 1. DÉ-ZOOM FORT : Plus ce chiffre est grand, plus la photo est petite */
+    padding: 25px; 
+    
     background: #1a1a1d; 
     position: relative;
-    box-shadow: 0 0 60px rgba(0, 91, 150, 0.6); 
+    /* Ombre bleue globale derrière le tout */
+    box-shadow: 0 0 80px rgba(0, 91, 150, 0.7); 
     animation: float 6s ease-in-out infinite;
     display: flex;
     justify-content: center;
@@ -140,19 +145,27 @@ nav {
     z-index: 1;
 }
 
-/* L'anneau tournant (Conic Gradient) */
+/* L'anneau tournant LUMINEUX */
 .profile-img-container::before {
     content: '';
     position: absolute;
-    inset: -3px; 
+    inset: -5px; /* Anneau un peu plus épais */
     border-radius: 50%;
-    padding: 4px; 
-    background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 20%, transparent 40%);
+    padding: 5px; 
+    
+    /* Le dégradé : Transparent -> Jaune -> BLANC (pour l'éclat) -> Transparent */
+    background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 25%, #ffffff 50%, transparent 55%);
+    
+    /* Correction de compatibilité (pour éviter le jaune dans VS Code) */
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    animation: spin-ring 4s linear infinite;
+    
+    /* 2. EFFET NÉON : C'est ça qui fait briller l'anneau ! */
+    filter: drop-shadow(0 0 10px var(--accent-color));
+    
+    animation: spin-ring 3s linear infinite; /* Rotation un peu plus rapide */
 }
 
 .profile-img {
@@ -161,11 +174,11 @@ nav {
     object-fit: cover; 
     border-radius: 50%;
     
-    /* CADRAGE SPÉCIAL : Pour voir le nœud papillon */
-    /* On centre horizontalement et on descend à 35% verticalement */
-    object-position: center 35%; 
+    /* 3. CADRAGE BAS : On descend bien pour voir le nœud */
+    object-position: center 65%; 
     
-    border: 4px solid #1a1a1d; /* Bordure interne */
+    /* Bordure fine pour séparer la photo du fond noir */
+    border: 2px solid #333; 
     z-index: 2;
 }
 

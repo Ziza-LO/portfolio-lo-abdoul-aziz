@@ -122,7 +122,7 @@ nav {
     display: flex; align-items: center; justify-content: center; gap: 80px;
     max-width: 1200px; width: 100%;
 }
-/* --- PHOTO DE PROFIL & ANNEAU RADAR (V16 : CADRAGE OPTIMISÉ VISAGE + BUSTE) --- */
+/* --- PHOTO DE PROFIL & ANNEAU RADAR (V15 : TRAIT FIN & CADRAGE VISAGE) --- */
 
 .profile-img-container {
     width: 350px; 
@@ -130,7 +130,7 @@ nav {
     flex-shrink: 0;
     border-radius: 50%; 
     
-    /* TRAIT NOIR FIN */
+    /* 1. TRAIT NOIR FIN : On réduit l'espace au minimum */
     padding: 6px; 
     
     background: #1a1a1d; 
@@ -160,7 +160,7 @@ nav {
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     
-    /* BRILLANCE MAXIMALE */
+    /* 2. BRILLANCE MAXIMALE */
     filter: drop-shadow(0 0 25px var(--accent-color));
     
     animation: spin-ring 3s linear infinite; 
@@ -178,33 +178,14 @@ nav {
     object-fit: cover; 
     border-radius: 50%;
     
-    /* ✅ NOUVEAU CADRAGE : Dézoomé pour voir front + nœud + buste */
-    object-position: center 20%; 
+    /* 3. CADRAGE PARFAIT (FRONT + NŒUD) */
+    /* 35% = On vise le haut du visage pour ne pas couper le front */
+    /* Comme la photo remplit tout le cercle (trait fin), on verra aussi le bas */
+    object-position: center 35%; 
     
     border: none; 
     z-index: 2;
 }
-
-/* Animation float (si pas déjà définie ailleurs) */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-/* Animation rotation anneau (si pas déjà définie ailleurs) */
-@keyframes spin-ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 
 
 @keyframes spin-ring {

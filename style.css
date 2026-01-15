@@ -258,98 +258,89 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
 /* =========================================
    8. RESPONSIVE MOBILE
    ========================================= */
-@media (max-width: 768px) {
+/* Par défaut le bouton hamburger est caché sur PC */
+.menu-toggle { display: none; }
+.logo-subtitle { font-size: 0.8rem; color: #666; }
+
+@media (max-width: 900px) { /* On déclenche le mobile un peu plus tôt */
     
-    /* --- 1. HEADER PLUS COMPACT --- */
+    /* HEADER & NAVIGATION */
     nav { 
-        flex-direction: column; 
-        padding: 10px 15px; /* Marges réduites */
-    }
-    
-    /* ASTUCE : On cache le sous-titre du logo sur mobile pour gagner de la place */
-    .logo div span:last-child {
-        display: none;
+        padding: 15px 20px; 
+        position: relative;
     }
 
-    /* Ajustement des liens pour qu'ils prennent moins de place */
-    .nav-links { 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        gap: 8px; /* Espace réduit entre les liens */
-        margin-top: 5px; 
-    }
-    
-    .nav-links a {
-        font-size: 0.85rem; 
-        padding: 5px 8px;
+    /* Le bouton hamburger apparaît */
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--primary-color);
     }
 
-    /* --- 2. GESTION DE L'ACCUEIL (Hero Profile) --- */
-    .hero-profile {
-        /* On pousse fort vers le bas pour sortir de sous le menu */
-        padding-top: 160px; 
-        padding-bottom: 40px;
-        min-height: auto;
-        display: block; 
+    /* On garde le titre mais on réduit un peu la taille pour que ça rentre */
+    .logo-subtitle {
+        font-size: 0.65rem; 
+        max-width: 200px;
+        line-height: 1.2;
     }
 
-    .hero-container { 
-        flex-direction: column-reverse; /* Photo au-dessus du texte */
-        text-align: center; 
-        gap: 30px; 
+    /* LE MENU CACHÉ PAR DÉFAUT */
+    .nav-links {
+        display: none; /* Caché */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Juste en dessous du header */
+        left: 0;
+        background-color: var(--white);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px;
+        border-top: 2px solid var(--accent-color);
+        z-index: 2000;
+    }
+
+    /* CLASSE MAGIQUE : Quand le menu est ouvert via JS */
+    .nav-links.mobile-menu-active {
         display: flex;
     }
 
-    .profile-img-container { 
-        width: 180px; /* Photo adaptée mobile */
-        height: 180px; 
-        margin: 0 auto; 
+    .nav-links li {
+        width: 100%;
+        margin: 10px 0;
     }
 
-    /* --- 3. GESTION DES AUTRES PAGES (Parcours, Compétences, Réalisations) --- */
-    .hero {
-        margin-top: 0; /* On reset la marge desktop */
-        padding-top: 160px; /* On applique le même "coussin" que l'accueil */
-        height: auto; /* On laisse la hauteur s'adapter au texte */
-        padding-bottom: 40px;
-    }
-    
-    .hero-content {
-        max-width: 90%;
-        padding: 20px;
-    }
-
-    /* --- 4. RESTE DU DESIGN --- */
-    .hero-text h1 { font-size: 1.8rem; }
-    .hero-text p { font-size: 1rem; }
-
-    .btn-group { 
-        justify-content: center; 
-        flex-wrap: wrap; 
-    }
-
-    /* Mega Menu Mobile (Colonne simple) */
-    .dropdown-content.mega-box { 
-        flex-direction: column; 
-        min-width: 100%; 
-        position: static; 
-        box-shadow: none; 
-        border: 1px solid #eee;
-        margin-top: 10px;
+    /* Gestion des sous-menus sur mobile */
+    .dropdown-content, .dropdown-content.mega-box {
+        position: static;
+        display: none; /* Caché par défaut même au survol */
+        box-shadow: none;
+        padding-left: 20px;
+        border-left: 2px solid #eee;
+        transform: none;
+        min-width: 100%;
+        animation: none;
     }
     
-    .mega-column { padding: 10px; border: none; border-bottom: 1px solid #eee; }
+    /* Sur mobile, on affiche le sous-menu tout le temps pour simplifier, 
+       OU on utilise un JS plus complexe. Ici, version simple : ils sont dépliés */
+    .dropdown:hover .dropdown-content { display: block; }
+    
+    .mega-column { padding: 0; border: none; }
+    .mega-column:first-child { border: none; }
 
-    /* Timeline Mobile */
+    /* Ajustement Hero */
+    .hero-profile { padding-top: 100px; padding-bottom: 20px; }
+    .hero-container { flex-direction: column-reverse; gap: 30px; text-align: center; }
+    .profile-img-container { width: 220px; height: 220px; }
+    
+    /* Timeline & Grid */
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 15px; }
     .timeline-item::before { left: 60px; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
     .timeline-item.left::after, .timeline-item.right::after { left: 21px; }
     .timeline-item.right { left: 0%; }
-
-    /* Grilles en 1 colonne */
-    .project-grid, .skills-grid, .summary-grid { grid-template-columns: 1fr; }
     
-    /* Modale adaptée */
-    .modal-content { width: 90%; margin: 40% auto; padding: 25px; }
+    .project-grid, .skills-grid, .summary-grid { grid-template-columns: 1fr; }
+    .modal-content { width: 90%; margin: 20% auto; }
 }

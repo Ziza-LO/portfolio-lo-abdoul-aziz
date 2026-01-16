@@ -1,4 +1,4 @@
-/* style.css - VERSION FINALE V13 (HAMBURGER, PULSE & RADAR) */
+/* style.css - VERSION FINALE V16 (NETTETÉ MAXIMALE & OPTIMISATION) */
 
 /* =========================================
    1. VARIABLES & RESET
@@ -122,20 +122,29 @@ nav {
     display: flex; align-items: center; justify-content: center; gap: 80px;
     max-width: 1200px; width: 100%;
 }
-/* --- PHOTO DE PROFIL & ANNEAU RADAR (V15 : TRAIT FIN & CADRAGE VISAGE) --- */
+
+/* --- PHOTO DE PROFIL & ANNEAU RADAR (OPTIMISÉ POUR NETTETÉ) --- */
 
 .profile-img-container {
-    width: 350px; 
-    height: 350px; 
+    /* NETTETÉ : Taille réduite à 300px pour éviter la pixelisation sur PC */
+    width: 300px; 
+    height: 300px; 
+    
     flex-shrink: 0;
     border-radius: 50%; 
     
-    /* 1. TRAIT NOIR FIN : On réduit l'espace au minimum */
+    /* TRAIT NOIR FIN */
     padding: 6px; 
     
     background: #1a1a1d; 
     position: relative;
-    box-shadow: 0 0 90px rgba(0, 91, 150, 0.8); /* Ombre globale plus forte */
+    box-shadow: 0 0 90px rgba(0, 91, 150, 0.8); 
+    
+    /* OPTIMISATION RENDU : Empêche le flou pendant l'animation */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    
     animation: float 6s ease-in-out infinite;
     display: flex;
     justify-content: center;
@@ -148,11 +157,11 @@ nav {
 .profile-img-container::before {
     content: '';
     position: absolute;
-    inset: -4px; /* Anneau fin */
+    inset: -4px;
     border-radius: 50%;
     padding: 4px; 
     
-    /* Dégradé : Jaune -> Blanc éclatant -> Transparent */
+    /* Variable corrigée : var(--accent-color) */
     background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 20%, #ffffff 50%, transparent 60%);
     
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -160,7 +169,7 @@ nav {
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     
-    /* 2. BRILLANCE MAXIMALE */
+    /* BRILLANCE MAXIMALE */
     filter: drop-shadow(0 0 25px var(--accent-color));
     
     animation: spin-ring 3s linear infinite; 
@@ -168,8 +177,8 @@ nav {
 
 /* Accélération au survol */
 .profile-img-container:hover::before {
-    animation-duration: 0.5s; /* Très rapide (Turbine) */
-    filter: drop-shadow(0 0 40px var(--accent-color)); /* Super Glow */
+    animation-duration: 0.5s; 
+    filter: drop-shadow(0 0 40px var(--accent-color)); 
 }
 
 .profile-img {
@@ -178,15 +187,15 @@ nav {
     object-fit: cover; 
     border-radius: 50%;
     
-    /* 3. CADRAGE PARFAIT (FRONT + NŒUD) */
-    /* 35% = On vise le haut du visage pour ne pas couper le front */
-    /* Comme la photo remplit tout le cercle (trait fin), on verra aussi le bas */
+    /* CADRAGE 5% : Vise le haut du visage */
     object-position: center 5%; 
+    
+    /* OPTIMISATION IMAGE : Améliore le contraste et la netteté */
+    image-rendering: -webkit-optimize-contrast;
     
     border: none; 
     z-index: 2;
 }
-
 
 @keyframes spin-ring {
     0% { transform: rotate(0deg); }
@@ -404,7 +413,12 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
     /* Ajustement Hero */
     .hero-profile { padding-top: 100px; padding-bottom: 20px; }
     .hero-container { flex-direction: column-reverse; gap: 30px; text-align: center; }
-    .profile-img-container { width: 220px; height: 220px; }
+    
+    /* Mobile : On revient à une taille un peu plus petite pour le téléphone */
+    .profile-img-container { 
+        width: 220px; 
+        height: 220px; 
+    }
     
     /* Timeline & Grid */
     .timeline::after { left: 31px; }

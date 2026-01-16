@@ -181,7 +181,7 @@ nav {
     /* 3. CADRAGE PARFAIT (FRONT + NŒUD) */
     /* 35% = On vise le haut du visage pour ne pas couper le front */
     /* Comme la photo remplit tout le cercle (trait fin), on verra aussi le bas */
-    object-position: center 10%; 
+    object-position: center 8%; 
     
     border: none; 
     z-index: 2;

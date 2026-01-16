@@ -1,4 +1,4 @@
-/* style.css - VERSION FINALE V17 (CORRECTION PARCOURS & Z-INDEX) */
+/* style.css - VERSION FINALE V18 (AJUSTEMENTS ESPACEMENT) */
 
 /* =========================================
    1. VARIABLES & RESET
@@ -126,25 +126,17 @@ nav {
 /* --- PHOTO DE PROFIL & ANNEAU RADAR (OPTIMISÉ POUR NETTETÉ) --- */
 
 .profile-img-container {
-    /* NETTETÉ : Taille réduite à 300px pour éviter la pixelisation sur PC */
     width: 300px; 
     height: 300px; 
-    
     flex-shrink: 0;
     border-radius: 50%; 
-    
-    /* TRAIT NOIR FIN */
     padding: 6px; 
-    
     background: #1a1a1d; 
     position: relative;
     box-shadow: 0 0 90px rgba(0, 91, 150, 0.8); 
-    
-    /* OPTIMISATION RENDU : Empêche le flou pendant l'animation */
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
-    
     animation: float 6s ease-in-out infinite;
     display: flex;
     justify-content: center;
@@ -153,29 +145,21 @@ nav {
     transition: all 0.5s ease;
 }
 
-/* L'anneau tournant (Radar) */
 .profile-img-container::before {
     content: '';
     position: absolute;
     inset: -4px;
     border-radius: 50%;
     padding: 4px; 
-    
-    /* Variable corrigée : var(--accent-color) */
     background: conic-gradient(from 0deg, transparent 0%, var(--accent-color) 20%, #ffffff 50%, transparent 60%);
-    
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    
-    /* BRILLANCE MAXIMALE */
     filter: drop-shadow(0 0 25px var(--accent-color));
-    
     animation: spin-ring 3s linear infinite; 
 }
 
-/* Accélération au survol */
 .profile-img-container:hover::before {
     animation-duration: 0.5s; 
     filter: drop-shadow(0 0 40px var(--accent-color)); 
@@ -186,13 +170,8 @@ nav {
     height: 100%; 
     object-fit: cover; 
     border-radius: 50%;
-    
-    /* CADRAGE 5% : Vise le haut du visage */
     object-position: center 4%; 
-    
-    /* OPTIMISATION IMAGE : Améliore le contraste et la netteté */
     image-rendering: -webkit-optimize-contrast;
-    
     border: none; 
     z-index: 2;
 }
@@ -446,6 +425,7 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
     justify-content: flex-start; /* On aligne en haut pour laisser la place */
     padding-top: 140px; /* Espace pour le header */
     padding-bottom: 60px;
+    gap: 20px; /* On réduit l'écart entre le titre et la boîte */
     overflow: hidden;
     color: var(--white);
 }
@@ -463,7 +443,7 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
     position: relative;
     z-index: 2; /* Premier plan */
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Réduit la marge sous le titre */
     max-width: 800px;
     padding: 0 20px;
 }
@@ -495,7 +475,7 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
     /* Fond blanc presque opaque pour garantir la lecture */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 40px;
+    padding: 30px 40px; /* Réduit un peu le padding vertical */
     border-radius: 15px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     border-top: 5px solid var(--primary-color);
@@ -506,6 +486,13 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
 .glass-box h2 {
     color: var(--primary-color) !important;
     margin-top: 0;
+    margin-bottom: 15px !important; /* Réduit l'espace sous le titre H2 */
+    text-align: center;
+}
+
+/* On ajuste le trait jaune CSS pour qu'il soit proche du titre */
+.glass-box h2::after {
+    margin: 10px auto 20px; /* Espace réduit autour du trait */
 }
 
 /* Responsive Spécifique Parcours */

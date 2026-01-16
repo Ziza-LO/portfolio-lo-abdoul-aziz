@@ -188,7 +188,7 @@ nav {
     border-radius: 50%;
     
     /* CADRAGE 5% : Vise le haut du visage */
-    object-position: center 5%; 
+    object-position: center 4%; 
     
     /* OPTIMISATION IMAGE : Améliore le contraste et la netteté */
     image-rendering: -webkit-optimize-contrast;

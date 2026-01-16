@@ -24,7 +24,7 @@
             </div>
             
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
                 
                 <li class="dropdown">
                     <a href="parcours.html" class="dropbtn">Parcours <i class="fas fa-caret-down"></i></a>
@@ -77,8 +77,10 @@
             <div class="hero-text">
                 <h1>Abdoul Aziz LO</h1>
                 <h2>Ingénieur IT SWIFT & Architecte Cloud</h2>
-                <p><strong>"Bâtir les ponts entre la rigueur bancaire et l'impact social de la Blockchain."</strong><br><br>
-                Passionné par l'ingénierie des systèmes complexes, je combine une expertise terrain en télécoms avec une rigueur acquise au sein de grandes institutions financières. Mon objectif : Sécuriser et optimiser les flux qui font tourner l'économie.</p>
+                
+                <p><strong>"Le meilleur système est celui qu'on ne remarque pas. Comme un gardien de l'ombre, je veille sur l'infrastructure critique. Vigilance absolue et réactivité immédiate : car ici, l'erreur n'est pas une option."</strong><br><br>
+                Passionné par l'ingénierie des systèmes complexes, j'apporte la rigueur nécessaire pour sécuriser les transactions qui connectent les nations. Mon objectif : Garantir la fiabilité totale des flux financiers (SWIFT, ISO 20022) par une supervision sans faille.</p>
+                
                 <div class="btn-group">
                     <a href="CV_Abdoul-Aziz-LO.pdf" target="_blank" class="cta-btn" style="display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-file-download"></i> Télécharger mon CV
@@ -186,6 +188,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             try { VANTA.NET({ el: "#hero-anim", mouseControls: true, touchControls: true, gyroControls: false, minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00, color: 0xffca28, backgroundColor: 0x005b96, points: 12.00, maxDistance: 22.00, spacing: 18.00 }); } catch (error) { console.log("Erreur Vanta"); }
+            
             const modal = document.getElementById("contactModal");
             const btn = document.getElementById("contactBtn");
             const span = document.getElementsByClassName("close-btn")[0];

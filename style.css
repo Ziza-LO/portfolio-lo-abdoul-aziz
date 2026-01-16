@@ -1,4 +1,4 @@
-/* style.css - VERSION FINALE V16 (NETTETÉ MAXIMALE & OPTIMISATION) */
+/* style.css - VERSION FINALE V17 (CORRECTION PARCOURS & Z-INDEX) */
 
 /* =========================================
    1. VARIABLES & RESET
@@ -429,4 +429,96 @@ footer { background: var(--dark-bg); color: var(--white); text-align: center; pa
     
     .project-grid, .skills-grid, .summary-grid { grid-template-columns: 1fr; }
     .modal-content { width: 90%; margin: 20% auto; }
+}
+
+/* =========================================
+   9. PAGE PARCOURS (FIX VISIBILITÉ & ANIMATION)
+   ========================================= */
+
+/* Le conteneur principal qui a l'ID #hero-anim */
+.parcours-hero-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 85vh; /* Hauteur confortable */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* On aligne en haut pour laisser la place */
+    padding-top: 140px; /* Espace pour le header */
+    padding-bottom: 60px;
+    overflow: hidden;
+    color: var(--white);
+}
+
+/* Force l'animation Vanta en arrière-plan absolu */
+#hero-anim canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 0 !important;
+}
+
+/* Le Titre : doit être au-dessus de l'animation */
+.parcours-title-container {
+    position: relative;
+    z-index: 2; /* Premier plan */
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.parcours-title-container h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #ffffff !important; /* Force le blanc */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Lisibilité */
+}
+
+.parcours-title-container .subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #f0f0f0 !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Conteneur de la boîte "À propos" */
+.apropos-container {
+    position: relative;
+    z-index: 2; /* Premier plan */
+    width: 100%;
+    max-width: 900px;
+}
+
+/* La boîte style verre (Glassmorphism) */
+.glass-box {
+    /* Fond blanc presque opaque pour garantir la lecture */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-top: 5px solid var(--primary-color);
+    color: #333; /* Texte noir */
+    text-align: left;
+}
+
+.glass-box h2 {
+    color: var(--primary-color) !important;
+    margin-top: 0;
+}
+
+/* Responsive Spécifique Parcours */
+@media (max-width: 768px) {
+    .parcours-hero-wrapper {
+        padding-top: 120px;
+        min-height: auto;
+    }
+    .parcours-title-container h1 {
+        font-size: 2.2rem;
+    }
+    .glass-box {
+        padding: 25px;
+        margin: 0 15px;
+    }
 }

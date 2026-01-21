@@ -139,13 +139,13 @@
                     <h4>7. Ce que j'en retiens</h4>
                     <p>Une expertise confirmée sur l'architecture modulaire de SWIFT (SAA, SQL, ADK) et la capacité à administrer des outils critiques où le droit à l'erreur n'existe pas.</p>
                 </div>
-            </div>
-            
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées (Liens) :</strong></p>
-                <a href="competences.html#comp-tech" class="tag-link">Supervision</a>
-                <a href="competences.html#comp-diplo" class="tag-link">Rigueur</a>
-                <a href="competences.html#comp-ethique" class="tag-link">Éthique</a>
+
+                <div class="project-footer">
+                    <p><strong>Compétences mobilisées (Liens) :</strong></p>
+                    <a href="competences.html#comp-tech" class="tag-link">Supervision</a>
+                    <a href="competences.html#comp-diplo" class="tag-link">Rigueur</a>
+                    <a href="competences.html#comp-ethique" class="tag-link">Éthique</a>
+                </div>
             </div>
         </div>
 
@@ -209,49 +209,82 @@
                     <h4>7. Ce que j'en retiens</h4>
                     <p>Une expertise approfondie sur le cycle de vie de la donnée bancaire (DLM) et la maîtrise de la gestion des identités (IAM) dans un environnement critique.</p>
                 </div>
-            </div>
 
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées (Liens) :</strong></p>
-                <a href="competences.html#comp-archi" class="tag-link">Architecture</a>
-                <a href="competences.html#comp-confid" class="tag-link">Confidentialité</a>
-                <a href="competences.html#comp-tech" class="tag-link">Support N3</a>
+                <div class="project-footer">
+                    <p><strong>Compétences mobilisées (Liens) :</strong></p>
+                    <a href="competences.html#comp-archi" class="tag-link">Architecture</a>
+                    <a href="competences.html#comp-confid" class="tag-link">Confidentialité</a>
+                    <a href="competences.html#comp-tech" class="tag-link">Support N3</a>
+                </div>
             </div>
         </div>
 
         <div class="project-block" id="real-iso">
             <div class="project-header">
-                <h3><i class="fas fa-rocket"></i> Migration ISO 20022 (CBPR+)</h3>
+                <h3><i class="fas fa-rocket"></i> Pilotage Stratégique et Technique ISO 20022 (Full MX)</h3>
             </div>
             <div class="project-body">
+                
                 <div class="proj-section">
-                    <h4>1. Contexte & Enjeu</h4>
-                    <p>La finance mondiale bascule du standard MT (texte) vers le standard MX (XML). Pour Ecobank, l'enjeu était la conformité réglementaire (CBPR+) et l'enrichissement des données de paiement.</p>
+                    <h4>1. Ma mission : Transformer une contrainte réglementaire en opportunité</h4>
+                    <p>Comme le souligne la stratégie du groupe, la migration ISO 20022 n'est pas "uniquement un projet de format de message (MT → MX)". C'est une refonte structurelle de la qualité des données. Ma mission a été de piloter le basculement vers une stratégie <strong>"Full MX"</strong> (abandon des standards MT), tout en garantissant que cet enrichissement de données serve à renforcer la sécurité financière.</p>
                 </div>
+
                 <div class="proj-section">
-                    <h4>2. Ma Mission</h4>
-                    <p>Assurer la transition technique et fonctionnelle des flux sans interruption de service.</p>
-                </div>
-                <div class="proj-section">
-                    <h4>3. Actions Clés</h4>
+                    <h4>2. Ce que je devais accomplir (Missions Détaillées)</h4>
                     <ul style="list-style-type: disc; padding-left: 20px;">
-                        <li>Configuration des règles de traduction (Translation Rules) dans SWIFT Alliance.</li>
-                        <li>Tests d'interopérabilité avec les banques correspondantes.</li>
-                        <li>Formation des utilisateurs aux nouveaux formats de messages (pacs.008, pacs.009).</li>
+                        <li style="margin-bottom: 10px;"><strong>Stratégie "Full MX" :</strong> Configurer les systèmes pour émettre uniquement des messages ISO 20022 (pacs.008, pacs.009), marquant la fin de l'ère des MT103/202.</li>
+                        <li style="margin-bottom: 10px;"><strong>Adaptation du Filtrage (Sanctions) :</strong> Revoir les règles de filtrage (<strong>Siron/Fircosoft</strong>) pour exploiter la structure des messages XML. L'objectif était de réduire les "faux positifs" grâce à des données plus structurées (Adresses, Parties).</li>
+                        <li style="margin-bottom: 10px;"><strong>Configuration du Moteur de Traduction :</strong> Paramétrer les règles de traduction (<strong>In-flow Translation</strong>) dans SWIFT Alliance Access (SAA) pour permettre aux anciens systèmes (Core Banking) de "parler" avec le nouveau réseau MX tout en préservant la richesse des données.</li>
+                        <li style="margin-bottom: 10px;"><strong>Gestion de l'Interopérabilité (RMA) :</strong> Anticiper le blocage des flux en mettant à jour les clés d'échange (Relationship Management Application) avec des <strong>centaines de banques correspondantes mondiales</strong> pour autoriser les nouveaux flux XML bien avant la date butoir.</li>
+                        <li style="margin-bottom: 10px;"><strong>Campagne de Tests (UAT) :</strong> Piloter les scénarios de tests d'envoi et de réception pour valider la structure des messages complexes et assurer la non-régression.</li>
                     </ul>
                 </div>
+
                 <div class="proj-section">
-                    <h4>4. Résultats</h4>
+                    <h4>3. Un environnement Technique & Compliance</h4>
                     <div class="kpi-box">
-                        <span>✅ Conformité 100%</span>
-                        <span>⏱️ 0 Retard Go-Live</span>
+                        <span><i class="fas fa-code"></i> Full MX (pacs/camt)</span>
+                        <span><i class="fas fa-exchange-alt"></i> In-flow Translation</span>
+                        <span><i class="fas fa-key"></i> Portail RMA</span>
+                        <span><i class="fas fa-shield-alt"></i> Siron/Fircosoft</span>
                     </div>
                 </div>
-            </div>
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées (Liens) :</strong></p>
-                <a href="competences.html#comp-federateur" class="tag-link">Leadership</a>
-                <a href="competences.html#comp-resilience" class="tag-link">Résilience</a>
+
+                <div class="proj-section">
+                    <h4>4. Les Enjeux Vitaux (Vision Stratégique)</h4>
+                    <p><strong>Risque de Blocage RMA :</strong> Envoyer un flux MX à une banque qui n'a pas ouvert ses clés de réception ISO 20022 entraîne un rejet immédiat des messages (NACK).</p>
+                    <p><strong>Gouvernance des Données :</strong> Un simple mapping technique sans revoir les règles de filtrage crée des risques (cécité sur les sanctions). L'ISO 20022 doit améliorer la traçabilité.</p>
+                </div>
+
+                <div class="proj-section">
+                    <h4>5. Mon processus technique (Méthodologie)</h4>
+                    <ul style="list-style-type: circle; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>5.1 Campagne d'Autorisation RMA (Bootstrap) :</strong> J'ai collaboré avec le Cash Management pour identifier les contreparties critiques et forcer l'ajout des messages pacs et camt dans les relations RMA existantes.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.2 Optimisation du Filtrage :</strong> Ajustement des algorithmes pour profiter de la granularité XML (ex: identification précise de l'Ultimate Debtor), transformant la migration en levier de performance compliance.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-section">
+                    <h4>6. Impacts concrets (Résultats)</h4>
+                    <div class="kpi-box">
+                        <span>✅ Succès Technique</span>
+                        <span>🛡️ Sécurité Financière</span>
+                        <span>⚙️ 0 Rejet RMA (Continuité)</span>
+                    </div>
+                </div>
+
+                <div class="proj-section">
+                    <h4>7. Ce que j'en retiens</h4>
+                    <p>L'ISO 20022 est avant tout un projet de <strong>Gouvernance des Données</strong>. La nécessité d'avoir une <strong>vision globale (IT + Compliance + Métier)</strong> pour réussir une transformation bancaire majeure.</p>
+                </div>
+
+                <div class="project-footer">
+                    <p><strong>Compétences mobilisées (Liens) :</strong></p>
+                    <a href="competences.html#comp-federateur" class="tag-link">Leadership</a>
+                    <a href="competences.html#comp-resilience" class="tag-link">Résilience</a>
+                    <a href="competences.html#comp-archi" class="tag-link">Gouvernance</a>
+                </div>
             </div>
         </div>
 

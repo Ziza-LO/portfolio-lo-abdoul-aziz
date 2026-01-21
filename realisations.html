@@ -25,7 +25,6 @@
             
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
-                
                 <li class="dropdown">
                     <a href="parcours.html" class="dropbtn">Parcours <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
@@ -37,7 +36,6 @@
                         </a>
                     </div>
                 </li>
-                
                 <li class="dropdown">
                     <a href="competences.html" class="dropbtn">Compétences <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content mega-box">
@@ -57,16 +55,14 @@
                         </div>
                     </div>
                 </li>
-
                 <li class="dropdown">
                     <a href="realisations.html" class="active dropbtn">Réalisations <i class="fas fa-caret-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="realisations.html#real-iso"><i class="fas fa-rocket"></i> ISO 20022</a>
-                        <a href="realisations.html#real-supervision"><i class="fas fa-chart-line"></i> Projet DDA</a>
-                        <a href="realisations.html#real-transrep"><i class="fas fa-database"></i> TransRep</a>
+                        <a href="#real-iso"><i class="fas fa-rocket"></i> ISO 20022</a>
+                        <a href="#real-supervision"><i class="fas fa-chart-line"></i> Projet DDA</a>
+                        <a href="#real-transrep"><i class="fas fa-database"></i> TransRep</a>
                     </div>
                 </li>
-
                 <li><a href="#" class="cta-btn" id="contactBtn">Me Contacter</a></li>
             </ul>
         </nav>
@@ -89,17 +85,17 @@
                 
                 <div class="proj-section">
                     <h4>1. Ma mission : La dernière ligne de défense financière</h4>
-                    <p>Au sein du Hub EBI SA, ma responsabilité était critique : maintenir la barrière de sécurité ultime pour empêcher l'envoi de virements en doublon. Dans un contexte de forts volumes transactionnels, une erreur de ce type entraîne une perte sèche de trésorerie immédiate et dégrade durablement la confiance des partenaires bancaires. J'étais garant de l'étanchéité de ce système.</p>
+                    <p>Au sein du Hub EBI SA, ma responsabilité était critique : Maintenir la barrière de sécurité ultime pour empêcher l'envoi de virements en doublon. Dans un contexte de forts volumes transactionnels, une erreur de ce type entraîne une perte sèche de trésorerie immédiate et dégrade durablement la confiance des partenaires bancaires. J'étais garant de l'étanchéité de ce système.</p>
                 </div>
 
                 <div class="proj-section">
                     <h4>2. Ce que je devais accomplir (Missions Détaillées)</h4>
                     <ul style="list-style-type: disc; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Ingénierie de Paramétrage :</strong> Configurer finement le module DDA au cœur de SWIFT Alliance Access (SAA) pour intercepter 100% des doublons potentiels en fonction des critères de détection prédéfinis par le back-office, qu'ils proviennent d'une erreur humaine ou d'un bug applicatif.</li>
-                        <li style="margin-bottom: 10px;"><strong>Analyse et Réduction du "Bruit" :</strong> Analyser les logs pour identifier les motifs de "faux positifs". Ajuster les seuils de sensibilité pour ne pas paralyser le Back-Office avec des alertes inutiles, tout en maintenant une vigilance maximale.</li>
-                        <li style="margin-bottom: 10px;"><strong>Architecture d'Interfaçage (SAA/ADK) :</strong> Garantir la stabilité du flux via le composant <strong>ADK (Alliance Developer Kit)</strong>. J'ai configuré le routage des messages en entrée et en sortie (Input/Output Channels) pour assurer que chaque message SWIFT transite obligatoirement par DDA avant d'être émis.</li>
+                        <li style="margin-bottom: 10px;"><strong>Ingénierie de Paramétrage :</strong> Configurer finement le module DDA au cœur de SWIFT Alliance Access (SAA) pour intercepter 100% des doublons potentiels en fonction des critères de détection prédéfinis par le back-office.</li>
+                        <li style="margin-bottom: 10px;"><strong>Analyse et Réduction du "Bruit" :</strong> Analyser les logs pour identifier les motifs de "faux positifs". Ajuster les seuils de sensibilité pour ne pas paralyser le Back-Office avec des alertes inutiles.</li>
+                        <li style="margin-bottom: 10px;"><strong>Architecture d'Interfaçage (SAA/ADK) :</strong> Garantir la stabilité du flux via le composant <strong>ADK (Alliance Developer Kit)</strong>. J'ai configuré le routage des messages en entrée et en sortie (Input/Output Channels).</li>
                         <li style="margin-bottom: 10px;"><strong>Administration de la Sécurité (IAM) :</strong> Gérer l'intégralité des accès via le portail administrateur <strong>"Security Definition"</strong> pour la gestion centralisée des utilisateurs et de leurs droits (rôles et périmètres).</li>
-                        <li style="margin-bottom: 10px;"><strong>Maintien en Condition Opérationnelle (MCO) :</strong> Assurer la pérennité du système par la gestion proactive des certificats de sécurité, l'application des correctifs (patch management) et la coordination technique avec l'éditeur AEG lors des montées de version SWIFT.</li>
+                        <li style="margin-bottom: 10px;"><strong>Maintien en Condition Opérationnelle (MCO) :</strong> Assurer la pérennité du système par la gestion proactive des certificats de sécurité, l'application des correctifs et la coordination technique avec l'éditeur AEG.</li>
                     </ul>
                 </div>
 
@@ -122,18 +118,20 @@
                 <div class="proj-section">
                     <h4>5. Mon processus d'ingénierie (Méthodologie)</h4>
                     <ul style="list-style-type: circle; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>5.1 Définition de la Signature Unique :</strong> J'ai défini dans l’outil les critères stricts qui constituent un doublon : concordance parfaite entre Montant, Devise, Date de valeur et Référence TRN, en fonction des besoins des opérations.</li>
-                        <li style="margin-bottom: 10px;"><strong>5.2 Calibrage des Fenêtres Temporelles :</strong> J'ai mené des tests de charge pour définir la profondeur d'historique idéale (rétention). L'objectif était de maximiser la sécurité sans saturer la mémoire des serveurs en production.</li>
-                        <li style="margin-bottom: 10px;"><strong>5.3 Workflow de Décision Automatisé :</strong> J'ai assuré le suivi de l’implémentation des règles selon les besoins du Back-office : <em>Si suspicion détectée</em> → <em>Message extrait du flux</em> → <em>Redirigé vers la file "WAIT FOR DECISION BY HUMAN OFFICER"</em> → <em>Mise en attente de validation, rejet ou modification</em>.</li>
-                        <li style="margin-bottom: 10px;"><strong>5.4 Gestion Centralisée des Accès (Security Definition) :</strong> Configuration RBAC. J'ai créé des profils allant de la lecture seule (View) aux opérateurs (Action), garantissant qu'aucun utilisateur ne puisse outrepasser ses droits.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.1 Définition de la Signature Unique :</strong> J'ai défini dans l’outil les critères stricts qui constituent un doublon : concordance parfaite entre Montant, Devise, Date de valeur et Référence TRN.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.2 Calibrage des Fenêtres Temporelles :</strong> J'ai mené des tests de charge pour définir la profondeur d'historique idéale (rétention).</li>
+                        <li style="margin-bottom: 10px;"><strong>5.3 Workflow de Décision Automatisé :</strong> J'ai assuré le suivi de l’implémentation des règles : <em>Si suspicion détectée</em> → <em>Message extrait du flux</em> → <em>Redirigé vers la file "WAIT FOR DECISION BY HUMAN OFFICER"</em>.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.4 Gestion Centralisée des Accès (Security Definition) :</strong> Configuration RBAC. Création de profils allant de la lecture seule (View) aux opérateurs (Action).</li>
                     </ul>
                 </div>
 
                 <div class="proj-section">
                     <h4>6. Impacts concrets (Résultats)</h4>
                     <div class="kpi-box">
-                        <span><i class="fas fa-check-circle"></i> 0 Doublon envoyé</span>
-                        <span><i class="fas fa-robot"></i> Filtrage 100% Automatisé</span>
+                        <span>✅ 0 Doublon envoyé</span>
+                        <span>🛡️ Sécurité 100%</span>
+                        <span>🤖 Filtrage Automatisé</span>
+                        <span>📉 -40% d'incidents</span>
                     </div>
                 </div>
 
@@ -141,6 +139,13 @@
                     <h4>7. Ce que j'en retiens</h4>
                     <p>Une expertise confirmée sur l'architecture modulaire de SWIFT (SAA, SQL, ADK) et la capacité à administrer des outils critiques où le droit à l'erreur n'existe pas.</p>
                 </div>
+            </div>
+            
+            <div class="project-footer">
+                <p><strong>Compétences mobilisées (Liens) :</strong></p>
+                <a href="competences.html#comp-tech" class="tag-link">Supervision</a>
+                <a href="competences.html#comp-diplo" class="tag-link">Rigueur</a>
+                <a href="competences.html#comp-ethique" class="tag-link">Éthique</a>
             </div>
         </div>
 
@@ -152,17 +157,17 @@
                 
                 <div class="proj-section">
                     <h4>1. Ma mission : Garantir la mémoire juridique de la banque</h4>
-                    <p>Les institutions financières sont soumises à une obligation légale stricte de conservation des preuves de transactions sur une durée de 10 ans. SWIFT ne conservant les données en ligne que sur une courte période, ma mission a été de piloter la refonte technique de l'archivage vers <strong>TransRep</strong>. Il s'agissait de sécuriser le patrimoine de données de la banque et d'optimiser les capacités d'audit.</p>
+                    <p>Les institutions financières sont soumises à une obligation légale stricte de conservation des preuves de transactions sur une durée de 10 ans. SWIFT ne conservant les données en ligne que sur une courte période, ma mission a été de piloter la refonte technique de l'archivage vers <strong>TransRep</strong>.</p>
                 </div>
 
                 <div class="proj-section">
                     <h4>2. Ce que je devais accomplir (Missions Détaillées)</h4>
                     <ul style="list-style-type: disc; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>Migration de Données Critique :</strong> Orchestrer le transfert de l'historique transactionnel vers la nouvelle infrastructure. Le défi majeur était de garantir l'intégrité absolue des données : chaque octet du message SWIFT original devait être préservé à l'identique.</li>
-                        <li style="margin-bottom: 10px;"><strong>Architecture de Réplication (ADK) :</strong> Configurer le connecteur ADK pour qu'il capture, en temps réel, une copie conforme de tout le flux SWIFT (Messages entrants et sortants) pour l'injecter dans la base d'archivage, sans impacter la performance du flux de production.</li>
-                        <li style="margin-bottom: 10px;"><strong>Administration Centralisée (Security Definition) :</strong> Utiliser la console d'administration unifiée pour gérer les identités. J'ai mis en place une gestion des accès (IAM) permettant aux utilisateurs de se connecter avec un identifiant unique à l'écosystème AEG, tout en cloisonnant strictement leurs droits selon leur fonction.</li>
-                        <li style="margin-bottom: 10px;"><strong>Optimisation de l'Expérience Audit :</strong> Reconfigurer les index de recherche pour permettre aux auditeurs de retrouver une transaction vieille de plusieurs années en quelques secondes, contre plusieurs heures auparavant.</li>
-                        <li style="margin-bottom: 10px;"><strong>Support Expert N2/N3 :</strong> Agir comme référent technique pour la résolution des incidents d'archivage et le suivi des écarts de réconciliation.</li>
+                        <li style="margin-bottom: 10px;"><strong>Migration de Données Critique :</strong> Orchestrer le transfert de l'historique transactionnel vers la nouvelle infrastructure en garantissant l'intégrité absolue des données.</li>
+                        <li style="margin-bottom: 10px;"><strong>Architecture de Réplication (ADK) :</strong> Configurer le connecteur ADK pour qu'il capture, en temps réel, une copie conforme de tout le flux SWIFT (Messages entrants et sortants).</li>
+                        <li style="margin-bottom: 10px;"><strong>Administration Centralisée (Security Definition) :</strong> Utiliser la console d'administration unifiée pour gérer les identités et les accès (IAM) avec un cloisonnement strict des droits.</li>
+                        <li style="margin-bottom: 10px;"><strong>Optimisation de l'Expérience Audit :</strong> Reconfigurer les index de recherche pour permettre aux auditeurs de retrouver une transaction ancienne en quelques secondes.</li>
+                        <li style="margin-bottom: 10px;"><strong>Support Expert N2/N3 :</strong> Agir comme référent technique pour la résolution des incidents d'archivage.</li>
                     </ul>
                 </div>
 
@@ -177,32 +182,40 @@
 
                 <div class="proj-section">
                     <h4>4. Les Enjeux Vitaux</h4>
-                    <p><strong>Conformité Réglementaire (Banque Centrale) :</strong> L'incapacité à fournir une preuve immédiate lors d'un contrôle réglementaire expose la banque à des sanctions financières et pénales lourdes.</p>
+                    <p><strong>Conformité Réglementaire (Banque Centrale) :</strong> L'incapacité à fournir une preuve immédiate lors d'un contrôle expose la banque à des sanctions.</p>
                     <p><strong>Continuité d'Activité :</strong> Assurer que les équipes opérationnelles puissent accéder à l'historique même en cas d'indisponibilité du réseau SWIFT principal.</p>
                 </div>
 
                 <div class="proj-section">
                     <h4>5. Mon processus technique (Méthodologie)</h4>
                     <ul style="list-style-type: circle; padding-left: 20px;">
-                        <li style="margin-bottom: 10px;"><strong>5.1 Mapping et Normalisation des Données :</strong> J'ai piloté la recette technique des travaux de l'éditeur (AEG). Mon rôle consistait à auditer et valider la correspondance des champs (Mapping) entre les formats sources (MT/MX) et la base de données, en signalant les écarts pour correction avant la mise en production.</li>
-                        <li style="margin-bottom: 10px;"><strong>5.2 Protocole de Validation (Non-Régression) :</strong> J'ai mis en place une stratégie de test par échantillonnage statistique (Sampling). J'ai comparé des lots de messages archivés avec les originaux pour certifier mathématiquement l'absence d'altération.</li>
-                        <li style="margin-bottom: 10px;"><strong>5.3 Sécurisation Granulaire (RBAC via Security Definition) :</strong> J'ai traduit la politique de sécurité de la banque en règles techniques. Exemple : Un utilisateur interne ne possède qu'un droit de "Consultation" sur TransRep, tandis qu'un administrateur IT possède les droits de "Maintenance".</li>
+                        <li style="margin-bottom: 10px;"><strong>5.1 Mapping et Normalisation des Données :</strong> J'ai piloté la recette technique des travaux de l'éditeur (AEG). Mon rôle consistait à auditer et valider la correspondance des champs (Mapping).</li>
+                        <li style="margin-bottom: 10px;"><strong>5.2 Protocole de Validation (Non-Régression) :</strong> J'ai mis en place une stratégie de test par échantillonnage statistique (Sampling) pour certifier l'absence d'altération.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.3 Sécurisation Granulaire (RBAC via Security Definition) :</strong> Traduction de la politique de sécurité en règles techniques (Ex: Auditeur = "Consultation", Admin IT = "Maintenance").</li>
                     </ul>
                 </div>
 
                 <div class="proj-section">
                     <h4>6. Impacts concrets (Résultats)</h4>
                     <div class="kpi-box">
-                        <span><i class="fas fa-tachometer-alt"></i> Recherche : 4h → 2 min</span>
-                        <span><i class="fas fa-fingerprint"></i> Traçabilité Totale</span>
-                        <span><i class="fas fa-chart-bar"></i> Reporting Power BI</span>
+                        <span>⚡ Recherche : 4h → 2 min</span>
+                        <span>🌍 Accès Web 50+ Users</span>
+                        <span>💰 Économie Licences</span>
+                        <span>🔍 Traçabilité Totale</span>
                     </div>
                 </div>
 
                 <div class="proj-section">
                     <h4>7. Ce que j'en retiens</h4>
-                    <p>Une expertise approfondie sur le cycle de vie de la donnée bancaire (DLM - Data Lifecycle Management) et la maîtrise de la gestion des identités (IAM) dans un environnement critique multi-applicatif.</p>
+                    <p>Une expertise approfondie sur le cycle de vie de la donnée bancaire (DLM) et la maîtrise de la gestion des identités (IAM) dans un environnement critique.</p>
                 </div>
+            </div>
+
+            <div class="project-footer">
+                <p><strong>Compétences mobilisées (Liens) :</strong></p>
+                <a href="competences.html#comp-archi" class="tag-link">Architecture</a>
+                <a href="competences.html#comp-confid" class="tag-link">Confidentialité</a>
+                <a href="competences.html#comp-tech" class="tag-link">Support N3</a>
             </div>
         </div>
 
@@ -230,10 +243,15 @@
                 <div class="proj-section">
                     <h4>4. Résultats</h4>
                     <div class="kpi-box">
-                        <span><i class="fas fa-check"></i> Conformité 100%</span>
-                        <span><i class="fas fa-clock"></i> 0 Retard Go-Live</span>
+                        <span>✅ Conformité 100%</span>
+                        <span>⏱️ 0 Retard Go-Live</span>
                     </div>
                 </div>
+            </div>
+            <div class="project-footer">
+                <p><strong>Compétences mobilisées (Liens) :</strong></p>
+                <a href="competences.html#comp-federateur" class="tag-link">Leadership</a>
+                <a href="competences.html#comp-resilience" class="tag-link">Résilience</a>
             </div>
         </div>
 

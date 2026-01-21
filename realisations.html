@@ -15,7 +15,7 @@
                 <i class="fas fa-globe rotating-globe"></i>
                 <div style="display: flex; flex-direction: column; margin-left: 10px;">
                     <span style="font-size: 1.4rem; font-weight: 800; color: var(--primary-color);">LO Abdoul Aziz</span>
-                    <span style="font-size: 0.8rem; color: #666;">Ingénieur IT SWIFT & Moyens de paiements</span>
+                    <span class="logo-subtitle">Ingénieur IT SWIFT & Moyens de paiements</span>
                 </div>
             </a>
 
@@ -75,104 +75,165 @@
     <section class="hero" id="net-hero" style="height: 40vh;">
         <div class="hero-content">
             <h1>Mes Réalisations</h1>
-            <p>Projets concrets, analysés sous l'angle de la valeur ajoutée.</p>
+            <p>Projets techniques et contributions majeures en environnement bancaire critique.</p>
         </div>
     </section>
 
     <section class="container realisations-container">
 
-        <div id="real-iso" class="project-block">
+        <div class="project-block" id="real-supervision">
             <div class="project-header">
-                <h3><i class="fas fa-rocket"></i> La Nuit du Basculement (ISO 20022)</h3>
+                <h3><i class="fas fa-shield-alt"></i> Implémentation & Administration Avancée du Module DDA (Duplicates Detection App)</h3>
             </div>
             <div class="project-body">
+                
                 <div class="proj-section">
-                    <h4>1. Présentation & Contexte</h4>
-                    <p>Migration mondiale obligatoire des standards de paiement interbancaires (de MT vers ISO 20022). Un projet de 3 ans aboutissant à une nuit de bascule unique ("Big Bang") sans retour arrière possible.</p>
+                    <h4>1. Ma mission : La dernière ligne de défense financière</h4>
+                    <p>Au sein du Hub EBI SA, ma responsabilité était critique : maintenir la barrière de sécurité ultime pour empêcher l'envoi de virements en doublon. Dans un contexte de forts volumes transactionnels, une erreur de ce type entraîne une perte sèche de trésorerie immédiate et dégrade durablement la confiance des partenaires bancaires. J'étais garant de l'étanchéité de ce système.</p>
                 </div>
+
                 <div class="proj-section">
-                    <h4>2. Enjeux & Risques</h4>
-                    <p><strong>Enjeu :</strong> Conformité réglementaire mondiale (CBPR+). <br>
-                    <strong>Risque majeur :</strong> Paralysie totale des paiements internationaux de la banque le lundi matin en cas d'échec, avec impacts financiers et réputationnels désastreux.</p>
+                    <h4>2. Ce que je devais accomplir (Missions Détaillées)</h4>
+                    <ul style="list-style-type: disc; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Ingénierie de Paramétrage :</strong> Configurer finement le module DDA au cœur de SWIFT Alliance Access (SAA) pour intercepter 100% des doublons potentiels en fonction des critères de détection prédéfinis par le back-office, qu'ils proviennent d'une erreur humaine ou d'un bug applicatif.</li>
+                        <li style="margin-bottom: 10px;"><strong>Analyse et Réduction du "Bruit" :</strong> Analyser les logs pour identifier les motifs de "faux positifs". Ajuster les seuils de sensibilité pour ne pas paralyser le Back-Office avec des alertes inutiles, tout en maintenant une vigilance maximale.</li>
+                        <li style="margin-bottom: 10px;"><strong>Architecture d'Interfaçage (SAA/ADK) :</strong> Garantir la stabilité du flux via le composant <strong>ADK (Alliance Developer Kit)</strong>. J'ai configuré le routage des messages en entrée et en sortie (Input/Output Channels) pour assurer que chaque message SWIFT transite obligatoirement par DDA avant d'être émis.</li>
+                        <li style="margin-bottom: 10px;"><strong>Administration de la Sécurité (IAM) :</strong> Gérer l'intégralité des accès via le portail administrateur <strong>"Security Definition"</strong> pour la gestion centralisée des utilisateurs et de leurs droits (rôles et périmètres).</li>
+                        <li style="margin-bottom: 10px;"><strong>Maintien en Condition Opérationnelle (MCO) :</strong> Assurer la pérennité du système par la gestion proactive des certificats de sécurité, l'application des correctifs (patch management) et la coordination technique avec l'éditeur AEG lors des montées de version SWIFT.</li>
+                    </ul>
                 </div>
+
                 <div class="proj-section">
-                    <h4>3. Ce que j'ai fait</h4>
-                    <p>Préparation des environnements de secours (DRP) et déploiement Gateway SAG. Exécution des scripts de mapping MT/MX en temps réel.<br>
-                    <strong>Coordination de crise :</strong> À 3h00, identification d'une erreur critique de balise XML. J'ai fédéré les équipes réseaux et applicatives pour isoler le bug. Validation des flux témoins avant l'ouverture des marchés.</p>
-                </div>
-                <div class="proj-section">
-                    <h4>4. Résultats (KPIs)</h4>
+                    <h4>3. Un environnement technique sensible</h4>
                     <div class="kpi-box">
-                        <span>✅ Go-Live Réussi</span>
-                        <span>⚡ 0 min d'arrêt</span>
-                        <span>🛡️ 100% Conformité</span>
+                        <span><i class="fas fa-server"></i> SWIFT Alliance Access (SAA)</span>
+                        <span><i class="fas fa-file-code"></i> MT103/202 & ISO 20022</span>
+                        <span><i class="fas fa-database"></i> SQL Server / IIS</span>
+                        <span><i class="fas fa-lock"></i> LDAP/S & Radius</span>
                     </div>
-                    <p style="margin-top:10px; font-size:0.9rem;"><strong>Verdict :</strong> La banque a ouvert lundi matin sans aucun rejet de transaction.</p>
                 </div>
-            </div>
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées (Liens) :</strong></p>
-                <a href="competences.html#comp-federateur" class="tag-link">Leadership</a>
-                <a href="competences.html#comp-resilience" class="tag-link">Résilience</a>
+
+                <div class="proj-section">
+                    <h4>4. Les Enjeux Critiques</h4>
+                    <p><strong>Risque Financier Majeur :</strong> Empêcher irrévocablement les doublons sur les messages de paiements, peu importe les montants ou la devise en jeu.</p>
+                    <p><strong>Équilibre Opérationnel :</strong> Le défi était de trouver le réglage parfait : trop strict, on bloque l'économie de la banque ; trop lâche, on s'expose à des pertes.</p>
+                </div>
+
+                <div class="proj-section">
+                    <h4>5. Mon processus d'ingénierie (Méthodologie)</h4>
+                    <ul style="list-style-type: circle; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>5.1 Définition de la Signature Unique :</strong> J'ai défini dans l’outil les critères stricts qui constituent un doublon : concordance parfaite entre Montant, Devise, Date de valeur et Référence TRN, en fonction des besoins des opérations.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.2 Calibrage des Fenêtres Temporelles :</strong> J'ai mené des tests de charge pour définir la profondeur d'historique idéale (rétention). L'objectif était de maximiser la sécurité sans saturer la mémoire des serveurs en production.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.3 Workflow de Décision Automatisé :</strong> J'ai assuré le suivi de l’implémentation des règles selon les besoins du Back-office : <em>Si suspicion détectée</em> → <em>Message extrait du flux</em> → <em>Redirigé vers la file "WAIT FOR DECISION BY HUMAN OFFICER"</em> → <em>Mise en attente de validation, rejet ou modification</em>.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.4 Gestion Centralisée des Accès (Security Definition) :</strong> Configuration RBAC. J'ai créé des profils allant de la lecture seule (View) aux opérateurs (Action), garantissant qu'aucun utilisateur ne puisse outrepasser ses droits.</li>
+                    </ul>
+                </div>
+
+                <div class="proj-section">
+                    <h4>6. Impacts concrets (Résultats)</h4>
+                    <div class="kpi-box">
+                        <span><i class="fas fa-check-circle"></i> 0 Doublon envoyé</span>
+                        <span><i class="fas fa-robot"></i> Filtrage 100% Automatisé</span>
+                    </div>
+                </div>
+
+                <div class="proj-section">
+                    <h4>7. Ce que j'en retiens</h4>
+                    <p>Une expertise confirmée sur l'architecture modulaire de SWIFT (SAA, SQL, ADK) et la capacité à administrer des outils critiques où le droit à l'erreur n'existe pas.</p>
+                </div>
             </div>
         </div>
 
-        <div id="real-supervision" class="project-block">
+        <div class="project-block" id="real-transrep">
             <div class="project-header">
-                <h3><i class="fas fa-chart-line"></i> Sécurisation des Paiements (Projet DDA)</h3>
+                <h3><i class="fas fa-database"></i> Pilotage de la Migration et Optimisation de l'Archivage (AEG TransRep)</h3>
             </div>
             <div class="project-body">
+                
                 <div class="proj-section">
-                    <h4>1. Présentation & Contexte</h4>
-                    <p>Dans un flux quotidien de milliers de transactions, la banque faisait face à un risque opérationnel critique : l'émission de virements en double, générant des pertes financières sèches et des réclamations clients. J'ai piloté l'implémentation du moteur de détection DDA (Duplicate Detection Application) pour endiguer ce phénomène.</p>
+                    <h4>1. Ma mission : Garantir la mémoire juridique de la banque</h4>
+                    <p>Les institutions financières sont soumises à une obligation légale stricte de conservation des preuves de transactions sur une durée de 10 ans. SWIFT ne conservant les données en ligne que sur une courte période, ma mission a été de piloter la refonte technique de l'archivage vers <strong>TransRep</strong>. Il s'agissait de sécuriser le patrimoine de données de la banque et d'optimiser les capacités d'audit.</p>
                 </div>
+
                 <div class="proj-section">
-                    <h4>2. Actions & Acteurs</h4>
-                    <p>J'ai agi comme pivot entre l'éditeur AEG et les opérations. J'ai traduit les besoins métier en règles techniques de blocage (ex: bloquer si Montant + Bénéficiaire + Date sont identiques). J'ai supervisé la recette (UAT) et accompagné le déploiement en production.</p>
-                    <p><strong>Acteurs :</strong> Éditeur AEG (Tech), Infrastructure Interne (Réseau), Back-Office (Métier).</p>
+                    <h4>2. Ce que je devais accomplir (Missions Détaillées)</h4>
+                    <ul style="list-style-type: disc; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Migration de Données Critique :</strong> Orchestrer le transfert de l'historique transactionnel vers la nouvelle infrastructure. Le défi majeur était de garantir l'intégrité absolue des données : chaque octet du message SWIFT original devait être préservé à l'identique.</li>
+                        <li style="margin-bottom: 10px;"><strong>Architecture de Réplication (ADK) :</strong> Configurer le connecteur ADK pour qu'il capture, en temps réel, une copie conforme de tout le flux SWIFT (Messages entrants et sortants) pour l'injecter dans la base d'archivage, sans impacter la performance du flux de production.</li>
+                        <li style="margin-bottom: 10px;"><strong>Administration Centralisée (Security Definition) :</strong> Utiliser la console d'administration unifiée pour gérer les identités. J'ai mis en place une gestion des accès (IAM) permettant aux utilisateurs de se connecter avec un identifiant unique à l'écosystème AEG, tout en cloisonnant strictement leurs droits selon leur fonction.</li>
+                        <li style="margin-bottom: 10px;"><strong>Optimisation de l'Expérience Audit :</strong> Reconfigurer les index de recherche pour permettre aux auditeurs de retrouver une transaction vieille de plusieurs années en quelques secondes, contre plusieurs heures auparavant.</li>
+                        <li style="margin-bottom: 10px;"><strong>Support Expert N2/N3 :</strong> Agir comme référent technique pour la résolution des incidents d'archivage et le suivi des écarts de réconciliation.</li>
+                    </ul>
                 </div>
+
                 <div class="proj-section">
-                    <h4>3. Résultats</h4>
+                    <h4>3. Un environnement Data & Réglementaire</h4>
                     <div class="kpi-box">
-                        <span>📉 -40% d'incidents</span>
-                        <span>💰 Zero Loss</span>
+                        <span><i class="fas fa-hdd"></i> SQL / Oracle Haute Dispo</span>
+                        <span><i class="fas fa-archive"></i> Stockage WORM</span>
+                        <span><i class="fab fa-linux"></i> Windows / RedHat Enterprise</span>
                     </div>
-                    <p style="margin-top:10px;">Cet outil est désormais le "filet de sécurité" standard de la banque.</p>
                 </div>
-            </div>
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées (Liens) :</strong></p>
-                <a href="competences.html#comp-tech" class="tag-link">Supervision</a>
-                <a href="competences.html#comp-diplo" class="tag-link">Diplomatie</a>
-                <a href="competences.html#comp-ethique" class="tag-link">Éthique</a>
+
+                <div class="proj-section">
+                    <h4>4. Les Enjeux Vitaux</h4>
+                    <p><strong>Conformité Réglementaire (Banque Centrale) :</strong> L'incapacité à fournir une preuve immédiate lors d'un contrôle réglementaire expose la banque à des sanctions financières et pénales lourdes.</p>
+                    <p><strong>Continuité d'Activité :</strong> Assurer que les équipes opérationnelles puissent accéder à l'historique même en cas d'indisponibilité du réseau SWIFT principal.</p>
+                </div>
+
+                <div class="proj-section">
+                    <h4>5. Mon processus technique (Méthodologie)</h4>
+                    <ul style="list-style-type: circle; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>5.1 Mapping et Normalisation des Données :</strong> J'ai piloté la recette technique des travaux de l'éditeur (AEG). Mon rôle consistait à auditer et valider la correspondance des champs (Mapping) entre les formats sources (MT/MX) et la base de données, en signalant les écarts pour correction avant la mise en production.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.2 Protocole de Validation (Non-Régression) :</strong> J'ai mis en place une stratégie de test par échantillonnage statistique (Sampling). J'ai comparé des lots de messages archivés avec les originaux pour certifier mathématiquement l'absence d'altération.</li>
+                        <li style="margin-bottom: 10px;"><strong>5.3 Sécurisation Granulaire (RBAC via Security Definition) :</strong> J'ai traduit la politique de sécurité de la banque en règles techniques. Exemple : Un utilisateur interne ne possède qu'un droit de "Consultation" sur TransRep, tandis qu'un administrateur IT possède les droits de "Maintenance".</li>
+                    </ul>
+                </div>
+
+                <div class="proj-section">
+                    <h4>6. Impacts concrets (Résultats)</h4>
+                    <div class="kpi-box">
+                        <span><i class="fas fa-tachometer-alt"></i> Recherche : 4h → 2 min</span>
+                        <span><i class="fas fa-fingerprint"></i> Traçabilité Totale</span>
+                        <span><i class="fas fa-chart-bar"></i> Reporting Power BI</span>
+                    </div>
+                </div>
+
+                <div class="proj-section">
+                    <h4>7. Ce que j'en retiens</h4>
+                    <p>Une expertise approfondie sur le cycle de vie de la donnée bancaire (DLM - Data Lifecycle Management) et la maîtrise de la gestion des identités (IAM) dans un environnement critique multi-applicatif.</p>
+                </div>
             </div>
         </div>
 
-        <div id="real-transrep" class="project-block">
+        <div class="project-block" id="real-iso">
             <div class="project-header">
-                <h3><i class="fas fa-database"></i> Modernisation de l'Archivage (TransRep)</h3>
+                <h3><i class="fas fa-rocket"></i> Migration ISO 20022 (CBPR+)</h3>
             </div>
             <div class="project-body">
                 <div class="proj-section">
-                    <h4>1. Contexte</h4>
-                    <p>Face à l'obsolescence des serveurs Windows 2008 et au coût élevé des licences SWIFT, Ecobank devait moderniser son système d'archivage des messages financiers (TransRep).</p>
+                    <h4>1. Contexte & Enjeu</h4>
+                    <p>La finance mondiale bascule du standard MT (texte) vers le standard MX (XML). Pour Ecobank, l'enjeu était la conformité réglementaire (CBPR+) et l'enrichissement des données de paiement.</p>
                 </div>
                 <div class="proj-section">
-                    <h4>2. Objectifs & Mon Rôle</h4>
-                    <p>Migrer d'une architecture "Client Lourd" vers une architecture "Web" centralisée. J'ai coordonné la migration technique (SQL/IIS), géré la reprise des données historiques (Migration de millions de messages) et assuré l'interface avec l'éditeur pour résoudre les problèmes de compatibilité ADK.</p>
+                    <h4>2. Ma Mission</h4>
+                    <p>Assurer la transition technique et fonctionnelle des flux sans interruption de service.</p>
                 </div>
                 <div class="proj-section">
-                    <h4>3. Résultats</h4>
+                    <h4>3. Actions Clés</h4>
+                    <ul style="list-style-type: disc; padding-left: 20px;">
+                        <li>Configuration des règles de traduction (Translation Rules) dans SWIFT Alliance.</li>
+                        <li>Tests d'interopérabilité avec les banques correspondantes.</li>
+                        <li>Formation des utilisateurs aux nouveaux formats de messages (pacs.008, pacs.009).</li>
+                    </ul>
+                </div>
+                <div class="proj-section">
+                    <h4>4. Résultats</h4>
                     <div class="kpi-box">
-                        <span>🌍 Accès Web 50+ Users</span>
-                        <span>💸 Économie Licences</span>
+                        <span><i class="fas fa-check"></i> Conformité 100%</span>
+                        <span><i class="fas fa-clock"></i> 0 Retard Go-Live</span>
                     </div>
                 </div>
-            </div>
-            <div class="project-footer">
-                <p><strong>Compétences mobilisées (Liens) :</strong></p>
-                <a href="competences.html#comp-archi" class="tag-link">Architecture</a>
-                <a href="competences.html#comp-confid" class="tag-link">Confidentialité</a>
             </div>
         </div>
 
